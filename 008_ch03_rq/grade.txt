@@ -1,7 +1,7 @@
-Grading at 09/01/2020:08:10:47.669449
-For commit ID de552f58402cb4072255a4cf06df458f496511ad
-Grading at Tue Sep  1 16:10:47 CST 2020
+Grading at 09/01/2020:10:10:01.980265
+For commit ID 9e6a56fc6b8e10eba874f796fb57ec0cfaabaf73
+Grading at Tue Sep  1 18:10:01 CST 2020
 Reading your quiz answers from answers.txt
-You have 2 wrong answers
+Your quiz answers are correct
 
-Overall Grade: FAILED
+Overall Grade: PASSED
