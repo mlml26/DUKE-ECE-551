@@ -12,10 +12,6 @@ typedef struct _retire_info retire_info;
 double calculate(int startAge,double initial,retire_info wOr){
   int age=startAge/12;
   int month=startAge%12;
-  if(month==0){
-    month=12;
-    age--;
-  }
   double startMonthBalance=initial;
   double interestIncrease;
   double endMonth;
@@ -25,8 +21,8 @@ double calculate(int startAge,double initial,retire_info wOr){
   endMonth=interestIncrease+wOr.contribution+startMonthBalance;
   startMonthBalance=endMonth;
   month++;
-  if(month==13){
-    month=month%12;
+  if(month==12){
+    month=0;
     age++;
   }
   }
