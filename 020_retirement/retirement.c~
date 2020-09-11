@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct _retire_info {
+  int months;
+  double contribution;
+  double rate_of_return;
+};
+
+typedef struct _retire_info retire_info;
+
+void retirement (int startAge,   //in months
+                 double initial, //initial savings in dollars
+                 retire_info working, //info about working
+                 retire_info retired){ //info about being retired
+  double startBalance=initial;
+  printf("Age %3d month %2d you have $%.2lf\n",startAge,working.months,startBalance);
+  double interestIncrease=startBalance*working.rate_of_return;
+  double endMonth=interestIncrease+working.contribution+startBalance;
+  
+  
+  
+  
+
+
+
