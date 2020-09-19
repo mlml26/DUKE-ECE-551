@@ -1,6 +1,6 @@
-Grading at 09/19/2020:15:55:01.859036
-For commit ID 64534df59f384c1730f733d258b2dd5762ce6ce1
-Grading at Sat Sep 19 23:55:01 CST 2020
+Grading at 09/19/2020:16:00:12.324658
+For commit ID 7414a40530a3212e00ef36886fc92a754aa0e789
+Grading at Sun Sep 20 00:00:12 CST 2020
 Attempting to compile maxSeq.c 
 Linking your object file with our test main
 #################################################
