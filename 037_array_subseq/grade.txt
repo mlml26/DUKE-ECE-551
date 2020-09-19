@@ -1,17 +1,19 @@
-Grading at 09/19/2020:15:51:01.444749
-For commit ID 3a521194493c298cb90a6fe4f570779215355d39
-Grading at Sat Sep 19 23:51:01 CST 2020
+Grading at 09/19/2020:15:55:01.859036
+For commit ID 64534df59f384c1730f733d258b2dd5762ce6ce1
+Grading at Sat Sep 19 23:55:01 CST 2020
 Attempting to compile maxSeq.c 
-maxSeq.c: In function ‘maxSeq’:
-maxSeq.c:21:10: error: ‘max’ undeclared (first use in this function); did you mean ‘maxSeq’?
-   return max;
-          ^~~
-          maxSeq
-maxSeq.c:21:10: note: each undeclared identifier is reported only once for each function it appears in
-maxSeq.c:22:1: error: control reaches end of non-void function [-Werror=return-type]
- }
- ^
-cc1: all warnings being treated as errors
-The code did not compile!
+Linking your object file with our test main
+#################################################
+testcase2:
+array size:0 was Correct
+#################################################
+testcase3:
+array size:1 was Correct
+#################################################
+testcase4:
+array size:100 was Incorrect
+#################################################
+testcase5:
+array size:5000 was Incorrect
 
-Overall Grade: F
+Overall Grade: D
