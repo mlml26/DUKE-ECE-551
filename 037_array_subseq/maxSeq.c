@@ -14,7 +14,7 @@ size_t maxSeq(int *array,size_t n){
       }
       else{
 	max=(cur>max) ? cur:max;
-	cur=0;
+	cur=1;
       }
     }
      return max;
