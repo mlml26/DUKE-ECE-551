@@ -1,0 +1,12 @@
+Grading at 09/23/2020:06:16:18.611588
+For commit ID 0d21f3459a2c8622b699df8815bfc9477221685f
+Grading at Wed Sep 23 14:16:18 CST 2020
+Attempting to compile test.c
+gcc -o test -pedantic -std=gnu99 -Wall -Werrortest.c
+Makefile:2: recipe for target 'test' failed
+The code did not compile
+Line_4_did_not_match
+Your file did not match the expected ouput
+Your output did not match what we expected.
+
+Overall Grade: F
