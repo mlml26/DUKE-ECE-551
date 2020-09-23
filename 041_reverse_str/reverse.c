@@ -5,8 +5,12 @@
 void reverse(char * str) {
   //WRITE ME!
    int s=0;
+   if(!str){
+     return;
+   }
   int e=strlen(str);
-  if(e==0){
+  
+   if(e==0){
   }
    else if(e%2==0){
     while(e!=s){
