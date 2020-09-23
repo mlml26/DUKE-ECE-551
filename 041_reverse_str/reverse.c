@@ -4,6 +4,29 @@
 
 void reverse(char * str) {
   //WRITE ME!
+   int s=0;
+  int e=strlen(str);
+  if(e==0){
+  }
+   else if(e%2==0){
+    while(e!=s){
+    char st=str[s];
+    str[s]=str[e-1];
+    str[e-1]=st;
+    s++;
+    e--;
+    }
+    }
+  else{
+    while(e-s>1){
+      char st=str[s];
+      str[s]=str[e-1];
+      str[e-1]=st;
+      s++;
+      e--;
+    }
+  }
+  
 }
 
 int main(void) {
