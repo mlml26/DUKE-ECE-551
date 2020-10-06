@@ -1,0 +1,14 @@
+#include <stdio>
+#include <stdlib>
+#include <ctype.h>
+
+int main(int argc, char **argv) {
+  if(argc !=2) {
+    fprinf(stderr,"Usage: decreypt key inputFileNmae\n");
+    return EXIT_FAILURE;
+  }
+  
+
+
+
+}
