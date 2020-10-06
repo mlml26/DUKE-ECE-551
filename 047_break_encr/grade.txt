@@ -1,8 +1,8 @@
-Grading at 10/06/2020:10:49:09.700412
-For commit ID 9bd6981723113e8fcef17e50bf2fa04785f5c2b4
-Grading at Tue Oct  6 18:49:05 CST 2020
+Grading at 10/06/2020:10:55:07.696272
+For commit ID 9bcee28a4b49ff78c1fcdfd66ff5ef0e3fd94ea2
+Grading at Tue Oct  6 18:55:03 CST 2020
 Attempting to compile breaker.c 
-make: 'breaker' is up to date.
+gcc -o breaker -pedantic -std=gnu99 -Wall -Werror breaker.c
 testcase1 passed
 #################################################
 testcase2:
