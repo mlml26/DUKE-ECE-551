@@ -28,7 +28,7 @@ int count(FILE * f){
 }
 
 int findkey(int n){
-  return (n-4)>=0 ? (n-4) : (n-4+25); 
+  return (n-4)>=0 ? (n-4) : (n-4+26); 
 }
 
 int main(int argc, char **argv) {
