@@ -46,7 +46,7 @@ int main(int argc, char **argv){
   FILE *f=fopen(argv[1],"r");
   if(f==NULL){
     perror("Failed to open the input file!");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   char array[ROWS][LINE_SIZE];
   read(array,f);
