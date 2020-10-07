@@ -26,7 +26,7 @@ void read(char line[ROWS][LINE_SIZE],FILE *f){
   if(count<10){
     error("too few lines");
   }
-  return;
+  
 }
 
 void rotate_print(char line[ROWS][LINE_SIZE]){
@@ -46,7 +46,7 @@ int main(int argc, char **argv){
   FILE *f=fopen(argv[1],"r");
   if(f==NULL){
     perror("Failed to open the input file!");
-    exit(EXIT_FAILURE);
+    return(EXIT_FAILURE);
   }
   char array[ROWS][LINE_SIZE];
   read(array,f);
