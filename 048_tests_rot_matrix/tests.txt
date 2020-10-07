@@ -1,7 +1,7 @@
-
  
 
-test7.txt
+w.txt
+
 input20.txt
 input21.txt
 input22.txt
@@ -42,5 +42,5 @@ input16.txt
 input17.txt
 input18.txt
 input19.txt
-test7.txt
+
 
