@@ -1,6 +1,6 @@
  
 w.txt
-h.txt
+ww.txt
 input20.txt
 input21.txt
 input22.txt
