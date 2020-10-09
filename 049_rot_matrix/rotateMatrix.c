@@ -26,7 +26,7 @@ void read(char line[ROWS][LINE_SIZE],FILE *f){
   if(count<10){
     error("too few lines");
   }
-  
+  return;
 }
 
 void rotate_print(char line[ROWS][LINE_SIZE]){
