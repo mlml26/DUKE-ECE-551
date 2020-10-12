@@ -1,12 +1,10 @@
-Grading at 10/12/2020:16:16:02.923818
-For commit ID b96843caa2b4e615c073453e389186162c33dad4
-Grading at Tue Oct 13 00:16:01 CST 2020
-Line_1_did_not_match
-Line_2_did_not_match
-Your file did not match the expected ouput
-Your output did not match what we expected.
+Grading at 10/12/2020:16:16:54.239786
+For commit ID bba221e8bce91f7ad271a6cb280640e67ea9b3fd
+Grading at Tue Oct 13 00:16:53 CST 2020
+Your file matched the expected output
+Your output matched what we expected
 Attempting to compile test.c
   - Valgrind was clean (no errors, no memory leaks)
 valgrind was clean
 
-Overall Grade: F
+Overall Grade: A
