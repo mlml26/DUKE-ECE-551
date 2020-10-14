@@ -74,11 +74,19 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   //WRITE ME
+  /*
   double per_num = 100000.0;
   for(size_t i = 0; i < n_days; i++){
     double num_per_people = (double)data[i] / (double) pop;
     cum[i] = num_per_people * (double) per_num;
     //cum[i] = ((double) data[i] * per_num) / (double) pop; 
+  }
+  */
+  double per_num = 100000.0;
+  doubel sum = 0;
+  for(size_t i =0; i < n_days; i++){
+    sum = (double) data[i] + sum;
+    cum[i] = (sum * per_num) / (double) pop;
   }
 }
 
