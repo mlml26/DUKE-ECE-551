@@ -83,7 +83,7 @@ void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) 
   }
   */
   double per_num = 100000.0;
-  doubel sum = 0;
+  double sum = 0;
   for(size_t i =0; i < n_days; i++){
     sum = (double) data[i] + sum;
     cum[i] = (sum * per_num) / (double) pop;
