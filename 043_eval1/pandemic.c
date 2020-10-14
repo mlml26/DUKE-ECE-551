@@ -74,6 +74,10 @@ void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
   //WRITE ME
+  double per_num = 100000;
+  for(int i = 0; i < n_days; i++){
+    cum[i] = ((double) data[i] * per_num) / (double) pop; 
+  }
 }
 
 void printCountryWithMax(country_t * countries,
