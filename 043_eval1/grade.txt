@@ -1,12 +1,35 @@
-Grading at 10/14/2020:08:47:45.874983
-For commit ID 944e2e09362ea9ab21f5eda486ff0779fb07628c
-Grading at Wed Oct 14 16:47:45 CST 2020
+Grading at 10/14/2020:08:50:36.422894
+For commit ID 201a156b7a9c948b12866782b8c0c763d82f1184
+Grading at Wed Oct 14 16:50:36 CST 2020
 Doing some basic checking for your submission.
 
 Checking that your code compiles
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o printCountries
-Makefile:4: recipe for target 'printCountries' failed
-The code did not compile!
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
+gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
+The code compiled (good)
+
+Checking with the provided test cases
+
+Testing ./printCountries pop.csv 
+Your file matched the expected output
+Passed
+
+Testing ./printRunningAvg pop.csv daily.csv
+Your file matched the expected output
+Passed
+
+Testing ./printCumulative pop.csv daily.csv
+Your file matched the expected output
+Passed
+
+Testing ./printDailyMax pop.csv daily.csv
+Your file matched the expected output
+Passed
+
+You have passed the pregrader tests
+You should still run comprehensive tests of your own
 
 Overall Grade: NO GRADE YET
