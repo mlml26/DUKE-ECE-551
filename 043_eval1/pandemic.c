@@ -61,6 +61,15 @@ country_t parseLine(char * line) {
 
 void calcRunningAvg(unsigned * data, size_t n_days, double * avg) {
   //WRITE ME
+  size_t n_avg = n_days - 6;
+  unsigned sum;
+  for(size_t i=0; i < n_avg; i++){
+     sum = 0;
+    for(size_t j = i; j < i + 7; j++){
+      sum = data[j] + sum;
+    }
+    avg[i] =(double) sum / (double) 7;
+  }
 }
 
 void calcCumulative(unsigned * data, size_t n_days, uint64_t pop, double * cum) {
