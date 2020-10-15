@@ -1,6 +1,6 @@
-Grading at 10/15/2020:07:00:51.314239
-For commit ID a2eacc5af9f22863f341485e34a646710affb7f6
-Grading at Thu Oct 15 15:00:47 CST 2020
+Grading at 10/15/2020:07:14:15.282963
+For commit ID ff1d99b3c306c1548429e56eca95de7c76c940a0
+Grading at Thu Oct 15 15:14:11 CST 2020
 Attempting to compile sortLines.c
 #################################################
 testcase1:
