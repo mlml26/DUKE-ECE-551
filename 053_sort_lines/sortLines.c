@@ -38,7 +38,7 @@ int main(int argc, char ** argv) {
     }
     free(lines);
   }
-  else if(argc > 1){
+   if(argc > 1){
     for(int i =1; i< argc; i++){
       char **lines = NULL;
       char *curr = NULL;
