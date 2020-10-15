@@ -40,15 +40,15 @@ int main(int argc, char ** argv) {
   }
    if(argc > 1){
     for(int i =1; i< argc; i++){
-      char **lines = NULL;
-      char *curr = NULL;
-      size_t sz;
-      size_t i = 0;
       FILE *f = fopen(argv[i],"r");
       if(f==NULL){
 	perror("Failed to open the input file");
 	return EXIT_FAILURE;
       }
+      char **lines = NULL;
+      char *curr = NULL;
+      size_t sz;
+      size_t i = 0;
       while(getline(&curr, &sz, f) >= 0){
       lines = realloc(lines, (i+1) * sizeof(*lines));
       lines[i] = curr;
