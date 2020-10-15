@@ -118,6 +118,7 @@ int countMines(board_t * b, int x, int y) {
   count = count + IS_MINE(b->board[y-1][x-1]);
   count = count + IS_MINE(b->board[y][x+1]);
   count = count + IS_MINE(b->board[y][x-1]);
+  count = count + IS_MINE(b->board[y][x]);
   count = count + IS_MINE(b->board[y+1][x+1]);
   count = count + IS_MINE(b->board[y+1][x]);
   count = count + IS_MINE(b->board[y+1][x-1]);
