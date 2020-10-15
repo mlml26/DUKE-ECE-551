@@ -113,15 +113,17 @@ void printBoard(board_t * b) {
 int countMines(board_t * b, int x, int y) {
   //WRITE ME!
   int count=0;
-  count = count + IS_MINE(b->board[y-1][x+1]);
-  count = count + IS_MINE(b->board[y-1][x]);
-  count = count + IS_MINE(b->board[y-1][x-1]);
-  count = count + IS_MINE(b->board[y][x+1]);
-  count = count + IS_MINE(b->board[y][x-1]);
-  count = count + IS_MINE(b->board[y][x]);
-  count = count + IS_MINE(b->board[y+1][x+1]);
-  count = count + IS_MINE(b->board[y+1][x]);
-  count = count + IS_MINE(b->board[y+1][x-1]);
+  for(int i=y-1;i<=y+1;i++){
+    if((i>=0)&&(i<b->height)){
+      for(int j=x-1;j<=x+1;j++){
+	if((j>=0)&&(j<b->width)){
+	  if(IS_MINE(b->board[i][j])){
+	    count++;
+	  }
+	}
+      }
+    }
+  }
   return count;
 }
 int click (board_t * b, int x, int y) {
