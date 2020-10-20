@@ -5,4 +5,7 @@
 
 char * computeOutputFileName(const char * inputName) {
   //WRITE ME
+  char * result = inputName;
+  strcat(result,".counts");
+  return result;
 }
