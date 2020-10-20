@@ -1,0 +1,12 @@
+Grading at 10/20/2020:16:38:21.761169
+For commit ID b9033fc538e88057fc4d5d37cd9c012b4d5afdab
+Grading at Wed Oct 21 00:38:21 CST 2020
+Attempting to compile:
+outname.c: In function ‘computeOutputFileName’:
+outname.c:8:19: error: initialization discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   char * result = inputName;
+                   ^~~~~~~~~
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F
