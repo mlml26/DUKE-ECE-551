@@ -9,17 +9,18 @@ void stripNewline(char *str){
     *p='\0';
   }
 }
-kvpair_t *splitOnepair(const char *str){
-  const char *a = str;
-  const char *b = str;
+kvpair_t *splitOnepair( char *str){
+  char *a = str;
+  char *b = str;
   a = strchr(a,'=');
-  b = strchr(b,'\n');
+  b = strchr(str,'\n');
   kvpair_t *p = malloc(sizeof(*p));
-  
-  if(a == NULL|| b == NULL){
+    
+  if((a == NULL)||( b == NULL)){
     perror("Invalid first type of input file");
     exit(EXIT_FAILURE);
    }
+  
   size_t key_len = a- str +1;
   p->key =malloc(key_len * sizeof(*p->key));
   strncpy(p->key, str, key_len-1);
@@ -27,10 +28,10 @@ kvpair_t *splitOnepair(const char *str){
   size_t value_len = b-a;
   p->value = malloc(value_len* sizeof(*p->value));
   strncpy(p->value, a+1,value_len-1);
-  p->value[b-a-1]='\0';
+  p->value[value_len-1]='\0';
   return p;
 }
-void addpairs(const char * str, kvarray_t *kvarray){
+void addpairs( char * str, kvarray_t *kvarray){
   kvpair_t * a = NULL;
   a=splitOnepair(str);
   kvarray->pairs=realloc(kvarray->pairs,(kvarray->numPairs+1) * sizeof(*kvarray->pairs));
@@ -72,13 +73,16 @@ kvarray_t * readKVs(const char * fname) {
   }
   char *line =NULL;
   size_t size=0;
-  size_t len=0;
-  while((len=getline(&line,&size,f))>=0){
+  //size_t len=0;
+  while(getline(&line,&size,f)>=0){
+    //printf("%s\n",line);
     addpairs(line,kva);
+    // line=NULL;
   }
   free(line);
   if(fclose(f)!=0){
     printf("Failed to close the file");
+    perror("cannot close file");
     return NULL;
   }
   return kva;
@@ -95,18 +99,18 @@ void freeKVs(kvarray_t * p) {
   free(p);
 }
 
-void printKVs(kvarray_t * pairs) {
+void printKVs(kvarray_t * p) {
   //WRITE ME
-  for(int i=0; i<pairs->numPairs;i++){
-    printf("key = '%s' value = '%s'\n",pairs->pairs[i]->key,pairs->pairs[i]->value);
+  for(int i=0; i<p->numPairs;i++){
+    printf("key = '%s' value = '%s'\n",p->pairs[i]->key,p->pairs[i]->value);
   }
 }
 
-char * lookupValue(kvarray_t * pairs, const char * key) {
+char * lookupValue(kvarray_t * p, const char * key) {
   //WRITE ME
-  for(int i=0;i<pairs->numPairs;i++){
-    if(strcmp(pairs->pairs[i]->key,key)==0){
-      return pairs->pairs[i]->value;
+  for(int i=0;i<p->numPairs;i++){
+    if(strcmp(p->pairs[i]->key,key)==0){
+      return p->pairs[i]->value;
     }
   }
   return NULL;
