@@ -21,21 +21,22 @@ kvpair_t *splitOnepair(const char *str){
     exit(EXIT_FAILURE);
    }
   size_t key_len = a- str +1;
-  p->key =malloc(key_len* sizeof(*p->key));
+  p->key =malloc(key_len * sizeof(*p->key));
   strncpy(p->key, str, key_len-1);
   p->key[key_len-1]='\0';
   size_t value_len = b-a;
   p->value = malloc(value_len* sizeof(*p->value));
-  strncpy(p->value, a+1,b-a-1);
+  strncpy(p->value, a+1,value_len-1);
   p->value[b-a-1]='\0';
   return p;
 }
 void addpairs(const char * str, kvarray_t *kvarray){
   kvpair_t * a = NULL;
   a=splitOnepair(str);
-  kvarray->pairs=realloc(kvarray->pairs,(kvarray->numPairs+1)*sizeof(*kvarray->pairs));
+  kvarray->pairs=realloc(kvarray->pairs,(kvarray->numPairs+1) * sizeof(*kvarray->pairs));
   kvarray->pairs[kvarray->numPairs]=a;
   kvarray->numPairs++;
+  a=NULL;
 }/*
 kvarray_t *readFile(FILE *f){
   kvarray_t *kva;
@@ -66,6 +67,7 @@ kvarray_t * readKVs(const char * fname) {
   kva->numPairs=0;
   FILE *f = fopen(fname, "r");
   if(f == NULL){
+    perror("Cannot open file");
     return NULL;
   }
   char *line =NULL;
