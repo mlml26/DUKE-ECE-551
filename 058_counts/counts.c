@@ -44,7 +44,7 @@ void printCounts(counts_t * c, FILE * outFile) {
     fprintf(outFile,"%s: %zd\n",c->array[i]->string,c->array[i]->numTimes);
   }
   if(c->unknown >0){
-    fprintf(outFile,"%zd\n",c->unknown);
+    fprintf(outFile,"%s: %zd\n","unknown",c->unknown);
   }
   
 }
