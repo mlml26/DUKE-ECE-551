@@ -3,13 +3,13 @@
 #include <string.h>
 #include "kv.h"
 #include <ctype.h>
-/*
+
 void stripNewline(char *str){
   char *p=strchr(str,'\n');
   if(p!=NULL){
     *p='\0';
   }
-}*/
+}
 kvpair_t *splitOnepair( char *str){
   char *a = str;
   char *b = str;
