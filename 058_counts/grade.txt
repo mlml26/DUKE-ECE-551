@@ -1,100 +1,21 @@
-Grading at 10/22/2020:07:51:00.897471
-For commit ID fefc6b6aebff9482d2e9c8d0a7b801567d249b80
-Grading at Thu Oct 22 15:50:57 CST 2020
+Grading at 10/22/2020:08:47:44.364426
+For commit ID 565364315070bfddb6fcf76162f5c9d15f9fcb42
+Grading at Thu Oct 22 16:47:41 CST 2020
 Attempting to compile:
 #################################################
 testcase1:
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==72178== Memcheck, a memory error detector
-==72178== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==72178== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==72178== 
-==72178== Parent PID: 72177
-==72178== 
-==72178== 
-==72178== HEAP SUMMARY:
-==72178==     in use at exit: 56 bytes in 1 blocks
-==72178==   total heap usage: 23 allocs, 22 frees, 4,498 bytes allocated
-==72178== 
-==72178== 56 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==72178==    at 0x4C31D2F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==72178==    by 0x10896F: add (in counts_test)
-==72178==    by 0x108AFA: addCount (in counts_test)
-==72178==    by 0x108D33: main (in counts_test)
-==72178== 
-==72178== LEAK SUMMARY:
-==72178==    definitely lost: 56 bytes in 1 blocks
-==72178==    indirectly lost: 0 bytes in 0 blocks
-==72178==      possibly lost: 0 bytes in 0 blocks
-==72178==    still reachable: 0 bytes in 0 blocks
-==72178==         suppressed: 0 bytes in 0 blocks
-==72178== 
-==72178== For counts of detected and suppressed errors, rerun with: -v
-==72178== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==72207== Memcheck, a memory error detector
-==72207== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==72207== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==72207== 
-==72207== Parent PID: 72206
-==72207== 
-==72207== 
-==72207== HEAP SUMMARY:
-==72207==     in use at exit: 8 bytes in 1 blocks
-==72207==   total heap usage: 5 allocs, 4 frees, 4,149 bytes allocated
-==72207== 
-==72207== 8 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==72207==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==72207==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==72207==    by 0x10896F: add (in counts_test)
-==72207==    by 0x108AFA: addCount (in counts_test)
-==72207==    by 0x108D33: main (in counts_test)
-==72207== 
-==72207== LEAK SUMMARY:
-==72207==    definitely lost: 8 bytes in 1 blocks
-==72207==    indirectly lost: 0 bytes in 0 blocks
-==72207==      possibly lost: 0 bytes in 0 blocks
-==72207==    still reachable: 0 bytes in 0 blocks
-==72207==         suppressed: 0 bytes in 0 blocks
-==72207== 
-==72207== For counts of detected and suppressed errors, rerun with: -v
-==72207== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase3:
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==72231== Memcheck, a memory error detector
-==72231== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==72231== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==72231== 
-==72231== Parent PID: 72230
-==72231== 
-==72231== 
-==72231== HEAP SUMMARY:
-==72231==     in use at exit: 64 bytes in 1 blocks
-==72231==   total heap usage: 26 allocs, 25 frees, 4,583 bytes allocated
-==72231== 
-==72231== 64 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==72231==    at 0x4C31D2F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==72231==    by 0x10896F: add (in counts_test)
-==72231==    by 0x108AFA: addCount (in counts_test)
-==72231==    by 0x108D33: main (in counts_test)
-==72231== 
-==72231== LEAK SUMMARY:
-==72231==    definitely lost: 64 bytes in 1 blocks
-==72231==    indirectly lost: 0 bytes in 0 blocks
-==72231==      possibly lost: 0 bytes in 0 blocks
-==72231==    still reachable: 0 bytes in 0 blocks
-==72231==         suppressed: 0 bytes in 0 blocks
-==72231== 
-==72231== For counts of detected and suppressed errors, rerun with: -v
-==72231== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
-Overall Grade: B
+Overall Grade: A
