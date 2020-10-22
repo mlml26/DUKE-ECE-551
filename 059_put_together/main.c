@@ -4,14 +4,13 @@
 #include "kv.h"
 #include "counts.h"
 #include "outname.h"
-/*
+
 void stripNewline(char *str){
   char *p=strchr(str,'\n');
   if(p!=NULL){
     *p='\0';
   }
 }
-*/
 counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   //WRITE ME
   counts_t *c = createCounts();
@@ -22,17 +21,7 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   while((len = getline(&line,&sz,f))>=0){
     stripNewline(line);
     addCount(c, lookupValue(kvPairs,line));
-    line = NULL;
-    /*
-     char *p = strchr(line,'\n');
-    size_t len = p - line;
-    char *value = malloc((len+1)*sizeof(*value));
-    strncpy(value,line,p-line);
-    value[len]='\0';
-    addCount(c,lookupValue(kvPairs,value));
-    free(value);
-    */
-    line =NULL;
+    //line = NULL;
   }
   free(line);
   if(fclose(f)!=0){
