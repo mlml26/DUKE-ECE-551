@@ -55,5 +55,6 @@ void freeCounts(counts_t * c) {
     free(c->array[i]->string);
     free(c->array[i]);
   }
+  free(c->array);
   free(c);
 }
