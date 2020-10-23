@@ -1,7 +1,6 @@
-Grading at 10/14/2020:15:49:23.627695
+Grading at 10/23/2020:06:51:04.636906
 For commit ID 0ca37743088c646a42bc1dbcb43f6699d123a5c1
-Grading at Wed Oct 14 23:49:23 CST 2020
-Doing some basic checking for your submission.
+Grading at Fri Oct 23 14:50:47 CST 2020
 
 Checking that your code compiles
 rm -f *~ printCountries printRunningAvg printCumulative printDailyMax
@@ -9,27 +8,200 @@ gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCountries.o -o pri
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printRunningAvg.o -o printRunningAvg
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printCumulative.o -o printCumulative
 gcc -std=gnu99 -Werror -Wall -pedantic -ggdb3 pandemic.c printDailyMax.o -o printDailyMax
-The code compiled (good)
 
-Checking with the provided test cases
+=========================================================================
+Step 1
 
-Testing ./printCountries pop.csv 
++-----------------------------------------------------------------------+
+Test case 1
+Valgrind reported memory errors
+Your program successfully indicated a failure case
+                                                         [2.4/3]
++-----------------------------------------------------------------------+
+Test case 2
+Valgrind reported memory errors
+Your program successfully indicated a failure case
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 3
+Valgrind reported memory errors
+Your program successfully indicated a failure case
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 4
+Brazil: 212559409
+China: 1439323774
+Germany: 83783945
+India: 1380004385
+Nigeria: 206139587
+Norway: 5421242
+South Korea: 51269183
+United Kingdom: 67886004
+United States: 331002647
+Drewistan: 0
+Valgrind reported memory errors
+Your program did not indicate a failure case
+                                                         [0/2]
++-----------------------------------------------------------------------+
+Test case 5
+Valgrind reported memory errors
+Your program successfully indicated a failure case
+                                                         [.8/1]
++-----------------------------------------------------------------------+
+Test case 6
+Valgrind reported memory errors
 Your file matched the expected output
-Passed
-
-Testing ./printRunningAvg pop.csv daily.csv
+                                                         [8.0/10]
++-----------------------------------------------------------------------+
+Test case 7
+Valgrind reported memory errors
 Your file matched the expected output
-Passed
-
-Testing ./printCumulative pop.csv daily.csv
+                                                         [2.4/3]
++-----------------------------------------------------------------------+
+Test case 8
+Valgrind reported memory errors
 Your file matched the expected output
-Passed
-
-Testing ./printDailyMax pop.csv daily.csv
+                                                         [2.4/3]
++-----------------------------------------------------------------------+
+Test case 9
+Valgrind reported memory errors
 Your file matched the expected output
-Passed
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 10
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [.8/1]
++-----------------------------------------------------------------------+
+Test case 11
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [.8/1]
 
-You have passed the pregrader tests
-You should still run comprehensive tests of your own
+Step 1 total                                             [22.4/30]
 
-Overall Grade: NO GRADE YET
+=========================================================================
+Step 2
+
++-----------------------------------------------------------------------+
+Test case 12
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [4.0/5]
++-----------------------------------------------------------------------+
+Test case 13
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [4.0/5]
++-----------------------------------------------------------------------+
+Test case 14
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 15
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 16
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [2.4/3]
++-----------------------------------------------------------------------+
+Test case 17
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [2.4/3]
+
+Step 2 total                                             [16.0/20]
+
+=========================================================================
+Step 3
+
++-----------------------------------------------------------------------+
+Test case 18
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [4.0/5]
++-----------------------------------------------------------------------+
+Test case 19
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [4.0/5]
++-----------------------------------------------------------------------+
+Test case 20
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 21
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 22
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 23
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.6/2]
++-----------------------------------------------------------------------+
+Test case 24
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [1.6/2]
+
+Step 3 total                                             [16.0/20]
+
+=========================================================================
+Step 4
+
++-----------------------------------------------------------------------+
+Test case 25
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [4.0/5]
++-----------------------------------------------------------------------+
+Test case 26
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [4.0/5]
++-----------------------------------------------------------------------+
+Test case 27
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [2.4/3]
++-----------------------------------------------------------------------+
+Test case 28
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [2.4/3]
++-----------------------------------------------------------------------+
+Test case 29
+Valgrind reported memory errors
+Your file matched the expected output
+                                                         [3.2/4]
+
+Step 4 total                                             [16.0/20]
+
+=========================================================================
+Code quality
+
+Abstration:    1
+Comments:      3
+Formatting:    3
+Others:        2
+Comments from your grader:
+Formatting and commenting are good .But you always write fprintf() and exit(). 
+Why not abstract these two lines into a function so that you do not need to 
+change everywhere when you want to change the error handling.
+
+Quality total                                            [9/10]
+
+=========================================================================
+
+Overall Grade: 79
