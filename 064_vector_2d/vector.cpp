@@ -20,5 +20,5 @@ double Vector2D::dot(const Vector2D & rhs) const{
   return x * rhs.x + y * rhs.y;
 }
 void Vector2D::print() const{
-  std::printf("%.2f, %.2f", x, y);
+  std::printf("<%.2f, %.2f>", x, y);
 }
