@@ -57,7 +57,9 @@ country_t parseLine(char * line) {
     }
 
   //Convert pop string to 64-bit unsigned integer
-  uint64_t pop_num = strtoul(pop, NULL, 10);
+   uint64_t pop_num = strtoul(pop, NULL, 10);
+  // uint64_t pop_num = 0;
+  // pop_num = strtoul(pop, NULL, 10);
     if(errno==ERANGE){
     perror("population out of range");
     exit(EXIT_FAILURE);

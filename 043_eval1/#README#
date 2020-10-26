@@ -53,12 +53,7 @@ this:
 Of course, you should test with many more inputs than those provided to be
 confident your code works well.
 
- A valid
-country name can be any sequence of characters, except a comma, that fits
-in the "name" field of a country_t struct. The population is the data after
-the comma, where a valid population must represent a number that fits in
-the "population" field of a country_t struct. If there are any errors in
-the input file, including values that cannot be represented with the dataBe sure to git add, commit, and push your code when you are done testing
+Be sure to git add, commit, and push your code when you are done testing
 this step.
 
 Step 2
