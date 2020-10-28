@@ -12,7 +12,7 @@ double Circle::intersectionArea(const Circle & otherCircle){
   }
   if(d <= abs(r - otherCircle.r)){
     double mini = std::min(r, otherCircle.r);
-    return (mini * mini);
+    return (M_PI * mini * mini);
   }
   double a = r * r;
   double b = otherCircle.r * otherCircle.r;
