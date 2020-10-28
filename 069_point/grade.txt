@@ -1,10 +1,11 @@
-Grading at 10/28/2020:13:25:32.269438
-For commit ID 398e3c0b636ab03c8970dfaef7c9d2af7c3a5957
-Grading at Wed Oct 28 21:25:32 CST 2020
+Grading at 10/28/2020:13:29:43.416320
+For commit ID bf62d61c97b6742f311f4a2dcb65b3254d89f1b6
+Grading at Wed Oct 28 21:29:42 CST 2020
 Attempting to compile:
 rm -f  point.o  main.o points *~
 g++ -c -Wall -Werror -std=gnu++98 -pedantic -ggdb3 point.cpp
-Makefile:10: recipe for target 'point.o' failed
-The code did not compile!
+g++ -c -Wall -Werror -std=gnu++98 -pedantic -ggdb3 main.cpp
+g++ -Wall -Werror -std=gnu++98 -pedantic -ggdb3 -o points  point.o  main.o
+Your output matched what we expected
 
-Overall Grade: FAILED
+Overall Grade: PASSED
