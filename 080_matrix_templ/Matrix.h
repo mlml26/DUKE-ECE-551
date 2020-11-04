@@ -131,7 +131,7 @@ std::ostream & operator<<(std::ostream & s, const Matrix<T> &rhs){
       }
       s << *it_it;
     }
-    s << "]";
+    s << "}";
   }
   s << " ]";
   return s;
