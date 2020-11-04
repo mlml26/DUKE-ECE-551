@@ -18,7 +18,7 @@ class Matrix {
   Matrix();
   Matrix(int r, int c);
   Matrix(const Matrix & rhs);
-  //~Matrix();
+  ~Matrix();
   Matrix & operator=(const Matrix & rhs);
   int getRows() const;
   int getColumns() const;
@@ -47,6 +47,9 @@ template<typename T>
 Matrix<T>::Matrix(const Matrix & rhs): numRows(rhs.numRows),
                                        numColumns(rhs.numColumns),
                                        rows(rhs.rows){}
+template<typename T>
+Matrix<T>::~Matrix(){}
+
 template<typename T>
 Matrix<T> & Matrix<T>::operator=(const Matrix<T> & rhs){
   numRows = rhs.numRows;
