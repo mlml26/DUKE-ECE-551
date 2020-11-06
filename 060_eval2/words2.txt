@@ -1,0 +1,12 @@
+animal:walrus
+animal:cat
+animal:monkey
+animal:elephant
+place:DKU
+place: nOTTINGHAM
+adjective:peculiar
+adjective:scary
+adjective:peaceful
+:sds:::
+wenxuesen:handsome
+wenxuesen:cool

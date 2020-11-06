@@ -7,6 +7,26 @@ int error(char *s){
   exit(EXIT_FAILURE);
 }
 
+void checkComLinArg(int argc, int num){
+  if(argc != num + 1){
+    error("invalid number of command line argument!");
+  }
+}
+
+FILE * openCheckFile(char * s){
+  FILE *f = fopen(s, "r");
+  if(f == NULL){
+    error("open file failed");
+  }
+  return f;
+}
+
+void closeCheckFile(FILE *f){
+  if(fclose(f) != 0){
+    error("close file failed");
+  }
+}
+
 int checkLine(char *line){
   size_t i = 0;
   size_t num = 0;
@@ -71,7 +91,7 @@ void freeLines(char **lines, size_t i){
   free(lines);
 }
 
-void parseLine(FILE *f){
+void parseTemplate(FILE *f){
   char **lines  = NULL;
   char *cur = NULL;
   size_t sz;
@@ -97,25 +117,6 @@ void stripNewline(char * str){
     *p = '\0';
   }
 }
-
-/*
-bool checkColon(char * line){
-  size_t i = 0;
-  size_t n = 0;
-  while(line[i] != '\n'){
-    if(line[i] == ':'){
-      n++;
-    }
-    i++;
-  }
-  if(n>=1){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
-*/
 
 catarray_t * createCatarray(void){
   catarray_t * catarray = malloc(sizeof(*catarray));
@@ -163,8 +164,7 @@ void freeCatarray(catarray_t * c){
   free(c);
 }
 
-
-void readFile(FILE * f){
+void readCatWorFile(FILE * f){
   catarray_t *ans = createCatarray();
   char *cur = NULL;
   size_t sz;
@@ -357,20 +357,15 @@ void addRefWord(reference_t * ref, const char* word){
 }
 
 void freeRef(reference_t *ref){
-  //for(size_t i = 0; i < ref->n_words; i++){
-    
-  //}
   free(ref->word);
   free(ref);
 }
 
-void replaceLinestep3(char *line, catarray_t * cats, reference_t * ref){
+void replaceLineFun(char *line, catarray_t * cats, reference_t * ref){
   size_t i = 0;
   int flag = 0;
   size_t s = 0;
   size_t e = 0;
-  //char *cur;
-  //cur = strchr(line,'_');
   while(line[i] != '\n'){
     if(line[i] == '_' && flag == 0){
       s = i;
@@ -383,23 +378,10 @@ void replaceLinestep3(char *line, catarray_t * cats, reference_t * ref){
       char s1[e - s + 1 + 1];
       strncpy(s1, line + s, e - s + 1);
       s1[e - s + 1] = '\0';
-      //char *ss = "kule";
-      //printf("%s\n",ss);
-      // printf("%s:", s1);
       const char *s2 = checkChoose(s1, ref, cats);
-      //printf("chossen string:%s\n",s2);
-      //char *ss = "kule";
-      //printf("%s\n",ss);
       line = replace(line, s1, s2);
-      //  printf("%s\n",line);
-      //trace
-      //numReplace++;
-      //printf("numReplace:%ld\n", numReplace);
-      //ref = realloc(ref, numReplace * sizeof(*ref));
-      //ref[numReplace - 1] = strdup(s2);
       addRefWord(ref, s2);
       i = s + strlen(s2);
-      //printf("store:%s\n",ref[numReplace - 1]);
     }
     else{
       i++;
@@ -411,15 +393,13 @@ const char *checkChoose(char *s, reference_t *ref, catarray_t * cats){
   char c[strlen(s) - 1];
   strncpy(c, s + 1, strlen(s) - 2);
   c[strlen(s) - 2] = '\0';
-  //printf("%s\n",c);
   char * e;
   long int num = strtol(c, &e, 10);
-  //printf("obtained long int:%ld\n",num);
-  //printf("e-c: %ld strlen(c)-1: %ld",e - c,strlen(c) - 1);
   if((e - c) == (strlen(c))){
+    if(num <= 0){
+      error("category name invalid: integer of at least one");
+    }
     if(num <= ref->n_words){
-      //const char * ans = ref[numReplace - num];
-      //printf("%s","kule");
       return ref->word[ref->n_words - num];
     }
     else{
@@ -429,8 +409,7 @@ const char *checkChoose(char *s, reference_t *ref, catarray_t * cats){
     return chooseWord(c, cats);
 }
 
-
-void parseLineStep3(FILE *f, catarray_t * cats, reference_t *ref){
+void parseTempFun(FILE *f, catarray_t * cats, reference_t *ref){
   char **lines  = NULL;
   char *cur = NULL;
   size_t sz;
@@ -443,24 +422,18 @@ void parseLineStep3(FILE *f, catarray_t * cats, reference_t *ref){
     i++;
   }
   free(cur);
-  //char *s = "kule";
-  //printf("%s\n",s);
   for(size_t j = 0; j < i; j++){
-    replaceLinestep3(lines[j], cats, ref);
-    //char *s = "kule";
-    //printf("%s\n",s);
+    replaceLineFun(lines[j], cats, ref);
     printf("%s",lines[j]);
   }
   freeLines(lines, i);
-
 }
 
-void readFileStep3(FILE * f, FILE * w){
+void readCatWorFun(FILE * f, FILE * w){
   reference_t *ref = createNewRef();
   catarray_t *ans = createCatarray();
   char *cur = NULL;
   size_t sz;
-  //size_t i = 0;
   while(getline(&cur, &sz, f) >= 0){
     //char * c = strchr(cur, ':');
     char * p = strchr(cur,':');
@@ -477,11 +450,7 @@ void readFileStep3(FILE * f, FILE * w){
     addWord(ans, s1, s2);
   }
   free(cur);
-  //printWords(ans);
-  //char *s = "kule";
-  //printf("%s\n",s);
-  parseLineStep3(w, ans, ref);
-  //printWords(ans);
+  parseTempFun(w, ans, ref);
   freeCatarray(ans);
   freeRef(ref);
 }
