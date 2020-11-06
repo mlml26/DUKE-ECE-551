@@ -159,7 +159,7 @@ void freeCatarray(catarray_t * c){
     free(c->arr[i].words);
     //free(c->arr[i])
   }
-  //free(c->arr);
+  free(c->arr);
   free(c);
 }
 
