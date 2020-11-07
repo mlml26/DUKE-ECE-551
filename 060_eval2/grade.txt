@@ -1,6 +1,6 @@
-Grading at 11/06/2020:12:45:38.287081
-For commit ID 363667e07764304a61b72ac629f82f52eb75ad0c
-Grading at Fri Nov  6 20:45:37 CST 2020
+Grading at 11/07/2020:03:46:11.283757
+For commit ID f4032608e9b4e7d890e3b21feca553783e24588d
+Grading at Sat Nov  7 11:46:10 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
@@ -42,6 +42,20 @@ Your file matched the expected output
 Step 4
 Checking that story-step4 compiles
 rm -f *~ story-step1 story-step2 story-step3 story-step4 story-step1.o story-step2.o story-step3.o story-step4.o rand_story.o
-The code did not compile!
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c rand_story.c
+gcc -std=gnu99 -pedantic -Wall -Werror -ggdb3 -c story-step4.c
+gcc -o story-step4 story-step4.o rand_story.o provided.o
+rm story-step4.o
+The code compiled (good)
+Executable story-step4 exists (good)
+Checking with provided test cases words.txt story2.txt, no options
+Your file matched the expected output
+Checking with provided test cases words.txt story2.txt, -n option
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected ouput
+
+You have NOT passed the pregrader's test cases.
+You should go back and debug the indicated step(s).
 
 Overall Grade: NO GRADE YET
