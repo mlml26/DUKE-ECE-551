@@ -42,8 +42,9 @@ int checkLine(char *line){
   return EXIT_SUCCESS;
 }
 
-char *replace(char *s, char *s1,const char *s2){
+char *replace(char *s, char *s1,char *s2){
   char *f = strstr(s,s1);
+  //printf("In replace function: s2 is %s\n",s2);
   if(f != NULL){
     size_t len1 = strlen(s1);
     size_t len2 = strlen(s2);
@@ -52,6 +53,8 @@ char *replace(char *s, char *s1,const char *s2){
     }
     memcpy(f, s2, len2);
   }
+  //add
+  //free(s2);
   return s;
 }
 
@@ -74,9 +77,12 @@ void replaceLine(char *line){
       char s1[e - s + 1 + 1];
       strncpy(s1, line + s, e - s + 1);
       s1[e - s + 1] = '\0';
-      const char *s2 = chooseWord("verb",NULL);
+      char *s2 =strdup(chooseWord("verb",NULL));
+      //printf("Before replace function s2: %s\n", s2);
       line = replace(line, s1, s2);
       i = s + strlen(s2);
+      //add
+      free(s2);
     }
     else{
       i++;
@@ -150,7 +156,7 @@ void addWord(catarray_t * c, char * name, char * word){
     addNewCategory(c, name, word);
   }
 }
-
+/*
 void removeWord(catarray_t * c, char * name,const char * word){
   int flag = 0;
   //test
@@ -160,12 +166,15 @@ void removeWord(catarray_t * c, char * name,const char * word){
       //test
       //printf("Found category: %s\n",c->arr[i].name);
       for(size_t j = 0; j < c->arr[i].n_words; j++){
-	if(c->arr[i].words[j] == word){
+	if(!strcmp(word,c->arr[i].words[j])){
 	  c->arr[i].n_words--;
-	  if(c->arr[i].n_words == 0){
-	  free(c->arr[i].words);
-	  }
-	  else{
+	  
+	  //if(c->arr[i].n_words == 0){
+	  //free(c->arr[i].words[0]);
+	    //free(c->arr[i].words);
+	  //}
+	  
+	  //else{
 	    char ** temp = malloc(c->arr[i].n_words * sizeof(*temp));
 	    if(j != 0){
 	      memcpy(temp, c->arr[i].words, j * sizeof(*temp));
@@ -173,6 +182,71 @@ void removeWord(catarray_t * c, char * name,const char * word){
 	    if(j != c->arr[i].n_words){
 	      memcpy(temp + j,c->arr[i].words + j + 1, (c->arr[i].n_words - j) * sizeof(*temp));
 	    }
+	    
+	    //for(size_t x = 0; x < c->arr[i].n_words + 1; x++){
+	    //free(c->arr[i].words[x]);
+	    //}
+	    
+	    free(c->arr[i].words);
+	    c->arr[i].words = temp;
+	    //test
+	    
+	    //printf("number of words now: %ld", c->arr[i].n_words);
+	    //for(int w =0; w < c->arr[i].n_words; w++){
+	    //printf("index: %d, element: %s\n", w, c->arr[i].words[w]);
+	    //}
+	    
+	    //}
+	  break;
+	  flag = 1;
+	}
+      }
+      if(flag){
+	break;
+      }
+    }
+  }
+  //printWords(c);
+}
+*/
+//update
+void removeWord(catarray_t * c, char * name,const char * word){
+  int flag = 0;
+  //test
+  //printf("enter romveword function\n");
+  for(size_t i = 0; i < c->n; i++){
+    if(!strcmp(name,c->arr[i].name)){
+      //test
+      //printf("Found category: %s\n",c->arr[i].name);
+      for(size_t j = 0; j < c->arr[i].n_words; j++){
+	if(!strcmp(word,c->arr[i].words[j])){
+	  c->arr[i].n_words--;
+	  //test
+	  //printf("Found word: %s\nNumber of words left: %ld\n",word, c->arr[i].n_words);
+	  if(c->arr[i].n_words == 0){
+	    free(c->arr[i].words[0]);
+	    //free(c->arr[i].words);
+	  }
+	  
+	  else{
+	    char ** temp = malloc(c->arr[i].n_words * sizeof(*temp));
+	    if(j != 0){
+	      // memcpy(temp, c->arr[i].words, j * sizeof(*temp));
+	      for(size_t s =0; s < j; s++){
+		temp[s] = strdup(c->arr[i].words[s]);
+	      }
+	    }
+	    if(j != c->arr[i].n_words){
+	      //memcpy(temp + j,c->arr[i].words + j + 1, (c->arr[i].n_words - j) * sizeof(*temp));
+	      for(size_t s = j; s < c->arr[i].n_words; s++){
+		temp[s] = strdup(c->arr[i].words[s+1]);
+	      }
+	    }
+	    
+	    for(size_t x = 0; x < c->arr[i].n_words + 1; x++){
+	      free(c->arr[i].words[x]);
+	    }
+	    
 	    free(c->arr[i].words);
 	    c->arr[i].words = temp;
 	    //test
@@ -182,9 +256,10 @@ void removeWord(catarray_t * c, char * name,const char * word){
 	      printf("index: %d, element: %s\n", w, c->arr[i].words[w]);
 	    }
 	    */
-	  }
-	  break;
+	    }
 	  flag = 1;
+	  break;
+	  //flag = 1;
 	}
       }
       if(flag){
@@ -394,13 +469,17 @@ reference_t * createNewRef(void){
   return ref;
 }
 
-void addRefWord(reference_t * ref, const char* word){
+void addRefWord(reference_t * ref, char* word){
   ref->n_words++;
   ref->word = realloc(ref->word, ref->n_words * sizeof(*ref->word));
-  ref->word[ref->n_words - 1] = word;
+  //ref->word[ref->n_words - 1] = word;
+  ref->word[ref->n_words - 1] = strdup(word);
 }
 
 void freeRef(reference_t *ref){
+  for(size_t i =0; i < ref->n_words; i++){
+    free(ref->word[i]);
+  }
   free(ref->word);
   free(ref);
 }
@@ -422,10 +501,13 @@ void replaceLineFun(char *line, catarray_t * cats, reference_t * ref, int option
       char s1[e - s + 1 + 1];
       strncpy(s1, line + s, e - s + 1);
       s1[e - s + 1] = '\0';
-      const char *s2 = checkChoose(s1, ref, cats, option);
+      char *s2 = checkChoose(s1, ref, cats, option);
+      //printf("Before replace function s2: %s\n", s2);
       line = replace(line, s1, s2);
       addRefWord(ref, s2);
       i = s + strlen(s2);
+      //add
+      free(s2);
     }
     else{
       i++;
@@ -433,7 +515,7 @@ void replaceLineFun(char *line, catarray_t * cats, reference_t * ref, int option
   }
 }
 
-const char *checkChoose(char *s, reference_t *ref, catarray_t * cats, int option){
+char *checkChoose(char *s, reference_t *ref, catarray_t * cats, int option){
   char c[strlen(s) - 1];
   strncpy(c, s + 1, strlen(s) - 2);
   c[strlen(s) - 2] = '\0';
@@ -444,7 +526,10 @@ const char *checkChoose(char *s, reference_t *ref, catarray_t * cats, int option
       error("category name invalid: integer of at least one");
     }
     else if(num <= ref->n_words){
-      return ref->word[ref->n_words - num];
+      //const char *ans = ref->word[ref->n_words - num];
+      char * ans = strdup(ref->word[ref->n_words - num]);
+      return ans;
+      //return ans;
     }
     else{
       error("reference number too large");
@@ -460,7 +545,9 @@ const char *checkChoose(char *s, reference_t *ref, catarray_t * cats, int option
     return ans;
   }
   */
-  const char * ans = chooseWord(c, cats);
+  //const char * ans = chooseWord(c, cats);
+  char * ans = strdup(chooseWord(c, cats));
+  //printf("chooseWord: %s\n", ans);
   if(option == 1){
     removeWord(cats, c, ans);
   }
