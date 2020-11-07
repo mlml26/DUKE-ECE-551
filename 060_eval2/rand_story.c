@@ -151,6 +151,50 @@ void addWord(catarray_t * c, char * name, char * word){
   }
 }
 
+void removeWord(catarray_t * c, char * name,const char * word){
+  int flag = 0;
+  //test
+  //printf("enter romveword function\n");
+  for(size_t i = 0; i < c->n; i++){
+    if(!strcmp(name,c->arr[i].name)){
+      //test
+      //printf("Found category: %s\n",c->arr[i].name);
+      for(size_t j = 0; j < c->arr[i].n_words; j++){
+	if(c->arr[i].words[j] == word){
+	  c->arr[i].n_words--;
+	  if(c->arr[i].n_words == 0){
+	  free(c->arr[i].words);
+	  }
+	  else{
+	    char ** temp = malloc(c->arr[i].n_words * sizeof(*temp));
+	    if(j != 0){
+	      memcpy(temp, c->arr[i].words, j * sizeof(*temp));
+	    }
+	    if(j != c->arr[i].n_words){
+	      memcpy(temp + j,c->arr[i].words + j + 1, (c->arr[i].n_words - j) * sizeof(*temp));
+	    }
+	    free(c->arr[i].words);
+	    c->arr[i].words = temp;
+	    //test
+	    /*
+	    printf("number of words now: %ld", c->arr[i].n_words);
+	    for(int w =0; w < c->arr[i].n_words; w++){
+	      printf("index: %d, element: %s\n", w, c->arr[i].words[w]);
+	    }
+	    */
+	  }
+	  break;
+	  flag = 1;
+	}
+      }
+      if(flag){
+	break;
+      }
+    }
+  }
+  //printWords(c);
+}
+
 void freeCatarray(catarray_t * c){
   for(size_t i = 0; i < c->n; i++){
     for(size_t j = 0; j < c->arr[i].n_words; j++){
@@ -361,7 +405,7 @@ void freeRef(reference_t *ref){
   free(ref);
 }
 
-void replaceLineFun(char *line, catarray_t * cats, reference_t * ref){
+void replaceLineFun(char *line, catarray_t * cats, reference_t * ref, int option){
   size_t i = 0;
   int flag = 0;
   size_t s = 0;
@@ -378,7 +422,7 @@ void replaceLineFun(char *line, catarray_t * cats, reference_t * ref){
       char s1[e - s + 1 + 1];
       strncpy(s1, line + s, e - s + 1);
       s1[e - s + 1] = '\0';
-      const char *s2 = checkChoose(s1, ref, cats);
+      const char *s2 = checkChoose(s1, ref, cats, option);
       line = replace(line, s1, s2);
       addRefWord(ref, s2);
       i = s + strlen(s2);
@@ -389,7 +433,7 @@ void replaceLineFun(char *line, catarray_t * cats, reference_t * ref){
   }
 }
 
-const char *checkChoose(char *s, reference_t *ref, catarray_t * cats){
+const char *checkChoose(char *s, reference_t *ref, catarray_t * cats, int option){
   char c[strlen(s) - 1];
   strncpy(c, s + 1, strlen(s) - 2);
   c[strlen(s) - 2] = '\0';
@@ -399,17 +443,32 @@ const char *checkChoose(char *s, reference_t *ref, catarray_t * cats){
     if(num <= 0){
       error("category name invalid: integer of at least one");
     }
-    if(num <= ref->n_words){
+    else if(num <= ref->n_words){
       return ref->word[ref->n_words - num];
     }
     else{
       error("reference number too large");
     }
   }
-    return chooseWord(c, cats);
+  /*
+  else{
+    const char * ans = chooseWord(c, cats);
+    if(option == 1){
+      removeWord(cats, c, ans);
+      //printf("%s","kule");
+    }
+    return ans;
+  }
+  */
+  const char * ans = chooseWord(c, cats);
+  if(option == 1){
+    removeWord(cats, c, ans);
+  }
+  //return chooseWord(c, cats);
+  return ans;
 }
 
-void parseTempFun(FILE *f, catarray_t * cats, reference_t *ref){
+void parseTempFun(FILE *f, catarray_t * cats, reference_t *ref, int option){
   char **lines  = NULL;
   char *cur = NULL;
   size_t sz;
@@ -423,13 +482,13 @@ void parseTempFun(FILE *f, catarray_t * cats, reference_t *ref){
   }
   free(cur);
   for(size_t j = 0; j < i; j++){
-    replaceLineFun(lines[j], cats, ref);
+    replaceLineFun(lines[j], cats, ref, option);
     printf("%s",lines[j]);
   }
   freeLines(lines, i);
 }
 
-void readCatWorFun(FILE * f, FILE * w){
+void readCatWorFun(FILE * f, FILE * w, int option){
   reference_t *ref = createNewRef();
   catarray_t *ans = createCatarray();
   char *cur = NULL;
@@ -450,7 +509,7 @@ void readCatWorFun(FILE * f, FILE * w){
     addWord(ans, s1, s2);
   }
   free(cur);
-  parseTempFun(w, ans, ref);
+  parseTempFun(w, ans, ref, option);
   freeCatarray(ans);
   freeRef(ref);
 }
