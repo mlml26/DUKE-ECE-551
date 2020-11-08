@@ -39,7 +39,7 @@ country_t parseLine(char * line) {
   //Read population
   //Since the maximum value of 64-bit unsigned int is 18446744073709551615,
   //I creat an array with length 20.
-  char pop[20];
+  char pop[21];
   uint64_t j = 0;
   while(isdigit(line[i]) != 0){
     if(j ==20){
@@ -50,7 +50,7 @@ country_t parseLine(char * line) {
     j++;
     i++;
     }
-  
+  pop[j] = '\0';
   if(line[i] != '\n'){
     perror("Illegal input: population is not number");
     exit(EXIT_FAILURE);
