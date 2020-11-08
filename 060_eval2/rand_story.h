@@ -3,7 +3,8 @@
 
 #include "provided.h"
 #include "stdio.h"
-//any functions you want your main to use
+
+//a structure used to store used word and number of word used.
 struct reference_tag{
   char ** word;
   size_t n_words;
