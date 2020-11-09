@@ -1,13 +1,6 @@
-Grading at 11/09/2020:12:32:52.041251
-For commit ID f814107402625d819b59bb95e96f2e8d6bd34297
-Grading at Mon Nov  9 20:32:51 CST 2020
-I expected to find a file called 'answer.txt' but it did not exist
-(or was not a regular file)
-Here are the files that I can find:
-##answer.txt##
-#answer.txt#
-code.cpp
-Makefile
-README
+Grading at 11/09/2020:12:35:32.445655
+For commit ID 502f31ba6a03784b8a715ddc49d952bb14a8b113
+Grading at Mon Nov  9 20:35:32 CST 2020
+Your file matched the expected output
 
-Overall Grade: FAILED
+Overall Grade: PASSED
