@@ -14,4 +14,9 @@ Aslan purrs.
 ~Animal(Aslan)
 ~Lion(Leon)
 Leon roars.
-
+~Cat(Leon)
+Leon purrs.
+~Animal(Leon)
+~Cat(Fluffy)
+Fluffy purrs.
+~Animal(Fluffy)
