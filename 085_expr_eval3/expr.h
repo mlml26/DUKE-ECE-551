@@ -24,22 +24,22 @@ class NumExpression: public Expression{
 };
 
 class OpExpression: public Expression{
-  char op;
+  const char *op;
   Expression * lhs;
   Expression * rhs;
 
  public:
- OpExpression(char op, Expression * lhs, Expression * rhs):
+ OpExpression(const char * op, Expression * lhs, Expression * rhs):
   op(op),
     lhs(lhs),
       rhs(rhs){}
   virtual std::string toString() const{
     std::stringstream sstream;
-    sstream << '(' << lhs->toString() << ' ' << op << ' ' << rhs->toString() << ')';
+    sstream << '(' << lhs->toString() << ' ' << *op << ' ' << rhs->toString() << ')';
     return sstream.str();
   }
   virtual long evaluate() const{
-    switch(op){
+    switch(*op){
     case '+':
       return lhs->evaluate() + rhs->evaluate();
     case '-':
@@ -62,22 +62,22 @@ class OpExpression: public Expression{
 
 class PlusExpression: public OpExpression{
  public:
- PlusExpression(Expression * lhs, Expression * rhs) : OpExpression('+', lhs, rhs){}
+ PlusExpression(Expression * lhs, Expression * rhs) : OpExpression("+", lhs, rhs){}
 };
 
 class MinusExpression: public OpExpression{
  public:
- MinusExpression(Expression * lhs, Expression * rhs): OpExpression('-', lhs, rhs){}
+ MinusExpression(Expression * lhs, Expression * rhs): OpExpression("-", lhs, rhs){}
 };
 
 
 class TimesExpression: public OpExpression{
  public:
- TimesExpression(Expression * lhs, Expression * rhs): OpExpression('*', lhs, rhs){}
+ TimesExpression(Expression * lhs, Expression * rhs): OpExpression("*", lhs, rhs){}
 };
 
 
 class DivExpression: public OpExpression{
  public:
- DivExpression(Expression * lhs, Expression * rhs): OpExpression('/', lhs, rhs){}
+ DivExpression(Expression * lhs, Expression * rhs): OpExpression("/", lhs, rhs){}
 };
