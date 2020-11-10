@@ -50,7 +50,7 @@ class OpExpression: public Expression{
       return lhs->evaluate() * rhs->evaluate();
     default:
       std::cerr << "Impossible operation";
-      return EXIT_FAILURE;
+      abort();
     }
   }
 
