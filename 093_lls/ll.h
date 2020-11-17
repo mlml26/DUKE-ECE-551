@@ -108,7 +108,6 @@ void LinkedList<T>::addBack(const T &item){
 }
 
 //remove
-/*
 template<typename T>
 bool LinkedList<T>::remove(const T &item){
   Node **cur =&head;
@@ -123,55 +122,19 @@ bool LinkedList<T>::remove(const T &item){
       tail = tail->prev; //update tail
     }
     else{
-      (*cur)->next->prev = *cur; //update prev
+      (*cur)->next->prev = (*cur)->prev; //update prev
     }
     //update next and delete
+    Node *tem = *cur; //temp
     *cur = (*cur)->next;
-    delete *cur;
+    delete (tem);
     size--;
   }
   return true;
 }
-*/
-
-//remove new
-template<typename T>
-bool LinkedList<T>::remove(const T & item) {
-  if (head == NULL) {
-    return false;
-  }
-  else {
-    Node * p = head;
-    while (p != NULL) {
-      if (p->data != item) {
-        p = p->next;
-      }
-      else {
-        if (head == tail && tail == p) {
-          head = tail = NULL;
-        }
-        else if (tail == p) {
-          tail = p->prev;
-          tail->next = NULL;
-        }
-        else if (head == p) {
-          head = p->next;
-          head->prev = NULL;
-        }
-        else {
-          p->prev->next = p->next;
-          p->next->prev = p->prev;
-        }
-        delete p;
-        size--;
-        return true;
-      }
-    }
-    return false;
-  }
-}
 
 //[]
+
 template<typename T>
 T & LinkedList<T>::operator[](int index){
   if(index >= size){
@@ -197,8 +160,10 @@ const T & LinkedList<T>::operator[](int index) const{
   return cur->data;
 }
 
+
+
 //find
-/*
+
 template<typename T>
 int LinkedList<T>::find(const T &item){
   Node **cur = &head;
@@ -214,28 +179,23 @@ int LinkedList<T>::find(const T &item){
     return i;
   }
 }
-*/
 
-//FIND NEW
-template<typename T>
-int LinkedList<T>::find(const T & item) {
-  if (head == NULL) {
-    return -1;
-  }
-  int index = 0;
-  Node * p = head;
-  while (p != NULL) {
-    if (p->data == item) {
-      return index;
-    }
-    p = p->next;
-    index++;
-  }
-  return -1;
-}
+
+/*
 //getSize
 template<typename T>
 int LinkedList<T>::getSize() const{
   return size;
+}
+*/
+//getsize
+template<typename T>
+int LinkedList<T>::getSize() const {
+  int mysize = 0;
+  for (Node * p = head; p != NULL; p = p->next) {
+    mysize++;
+  }
+  return mysize;
+  // return size;
 }
 #endif
