@@ -20,7 +20,7 @@ class LinkedList{
     Node * next;
     Node * prev;
     Node(): data(0), next(NULL), prev(NULL){};
-    Node(T d, Node *n, Node *p): data(d), next(n), prev(p){};
+    Node(const T & d, Node *n, Node *p): data(d), next(n), prev(p){};
   };
   Node *head;
   Node *tail;
@@ -198,6 +198,7 @@ const T & LinkedList<T>::operator[](int index) const{
 }
 
 //find
+/*
 template<typename T>
 int LinkedList<T>::find(const T &item){
   Node **cur = &head;
@@ -213,7 +214,25 @@ int LinkedList<T>::find(const T &item){
     return i;
   }
 }
+*/
 
+//FIND NEW
+template<typename T>
+int LinkedList<T>::find(const T & item) {
+  if (head == NULL) {
+    return -1;
+  }
+  int index = 0;
+  Node * p = head;
+  while (p != NULL) {
+    if (p->data == item) {
+      return index;
+    }
+    p = p->next;
+    index++;
+  }
+  return -1;
+}
 //getSize
 template<typename T>
 int LinkedList<T>::getSize() const{
