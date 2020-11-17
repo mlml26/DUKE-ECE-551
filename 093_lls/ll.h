@@ -76,6 +76,7 @@ LinkedList<T>::~LinkedList(){
     delete head;
     head = temp;
   }
+  head = NULL;
   tail = NULL;
   size = 0;
 }
@@ -107,6 +108,7 @@ void LinkedList<T>::addBack(const T &item){
 }
 
 //remove
+/*
 template<typename T>
 bool LinkedList<T>::remove(const T &item){
   Node **cur =&head;
@@ -129,6 +131,44 @@ bool LinkedList<T>::remove(const T &item){
     size--;
   }
   return true;
+}
+*/
+
+//remove new
+template<typename T>
+bool LinkedList<T>::remove(const T & item) {
+  if (head == NULL) {
+    return false;
+  }
+  else {
+    Node * p = head;
+    while (p != NULL) {
+      if (p->data != item) {
+        p = p->next;
+      }
+      else {
+        if (head == tail && tail == p) {
+          head = tail = NULL;
+        }
+        else if (tail == p) {
+          tail = p->prev;
+          tail->next = NULL;
+        }
+        else if (head == p) {
+          head = p->next;
+          head->prev = NULL;
+        }
+        else {
+          p->prev->next = p->next;
+          p->next->prev = p->prev;
+        }
+        delete p;
+        size--;
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 //[]
