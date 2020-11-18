@@ -63,11 +63,11 @@ LinkedList<T> & LinkedList<T>::operator=(const LinkedList & rhs){
     Node *original_tail = tail;
     tail = tmp.tail;
     tmp.tail = original_tail;
-    size = tmp.size;
+    size = rhs.size;
   }
   return *this;
 }
-  
+
 //destructor
 template<typename T>
 LinkedList<T>::~LinkedList(){
@@ -134,7 +134,6 @@ bool LinkedList<T>::remove(const T &item){
 }
 
 //[]
-
 template<typename T>
 T & LinkedList<T>::operator[](int index){
   if(index >= size){
@@ -163,7 +162,6 @@ const T & LinkedList<T>::operator[](int index) const{
 
 
 //find
-
 template<typename T>
 int LinkedList<T>::find(const T &item){
   Node **cur = &head;
@@ -181,13 +179,13 @@ int LinkedList<T>::find(const T &item){
 }
 
 
-/*
+
 //getSize
 template<typename T>
 int LinkedList<T>::getSize() const{
   return size;
 }
-*/
+/*
 //getsize
 template<typename T>
 int LinkedList<T>::getSize() const {
@@ -198,4 +196,5 @@ int LinkedList<T>::getSize() const {
   return mysize;
   // return size;
 }
+*/
 #endif
