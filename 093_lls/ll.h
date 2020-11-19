@@ -44,7 +44,7 @@ class LinkedList{
 
 //copy constructor
 template<typename T>
-LinkedList<T>::LinkedList(const LinkedList &rhs): head(NULL), tail(NULL), size(rhs.size){
+LinkedList<T>::LinkedList(const LinkedList &rhs): head(NULL), tail(NULL), size(0){
   Node *c = rhs.head;
   while(c != NULL){
     addBack(c->data);
