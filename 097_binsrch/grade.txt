@@ -1,15 +1,41 @@
-Grading at 11/19/2020:07:11:59.819222
-For commit ID 498f8372abc60a735ca5dabd67ff5a51b6fe659c
-Grading at Thu Nov 19 15:11:59 CST 2020
+Grading at 11/19/2020:07:16:38.461389
+For commit ID d66db4511698b1c3829c25a6e71bd4931078e1b7
+Grading at Thu Nov 19 15:16:33 CST 2020
 Stripping out any main you may have written, and compiling...
-newsearch.cpp: In function ‘int binarySearchForZero(Function<int, int>*, int, int)’:
-newsearch.cpp:5:12: error: ‘hight’ was not declared in this scope
-     return hight - 1;
-            ^~~~~
-newsearch.cpp:5:12: note: suggested alternative: ‘high’
-     return hight - 1;
-            ^~~~~
-            high
-The code did not compile
+Testcase 1
+-----------------
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 62 steps (correct is 17)
+  - Test Failed (use logarithmic search!)
+Testcase 2
+-----------------
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 48 steps (correct is 15)
+  - Test Failed (use logarithmic search!)
+Testcase 3
+-----------------
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 52 steps (correct is 17)
+  - Test Failed (use logarithmic search!)
+Testcase 4
+-----------------
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the wrong result
+  - Test Failed
+Testcase 5
+-----------------
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 2 steps (correct is 0)
+  - Test Passed
+Testcase 6
+-----------------
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 2 steps (correct is 12)
+  - Test Passed
+Testcase 7
+-----------------
+  - Valgrind was clean (no errors, no memory leaks)
+  - You got the correct result in 1 steps (correct is 4)
+  - Test Passed
 
 Overall Grade: F
