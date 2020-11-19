@@ -1,0 +1,15 @@
+Grading at 11/19/2020:07:11:59.819222
+For commit ID 498f8372abc60a735ca5dabd67ff5a51b6fe659c
+Grading at Thu Nov 19 15:11:59 CST 2020
+Stripping out any main you may have written, and compiling...
+newsearch.cpp: In function ‘int binarySearchForZero(Function<int, int>*, int, int)’:
+newsearch.cpp:5:12: error: ‘hight’ was not declared in this scope
+     return hight - 1;
+            ^~~~~
+newsearch.cpp:5:12: note: suggested alternative: ‘high’
+     return hight - 1;
+            ^~~~~
+            high
+The code did not compile
+
+Overall Grade: F
