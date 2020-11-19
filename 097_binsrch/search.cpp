@@ -11,7 +11,7 @@ int binarySearchForZero(Function<int, int> * f, int low, int high){
   if(low == high){
     return low;
   }
-  int cur = (high + low - 1) / 2;
+  int cur = ((high - low) / 2) + low;
   if(f->invoke(cur) > 0){
     return binarySearchForZero(f, low, cur);
   }
