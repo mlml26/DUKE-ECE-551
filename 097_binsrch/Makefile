@@ -1,2 +1,2 @@
-search:search.cpp
-	g++ -o search -std=gnu++98 -pedantic -Wall -Werror search.cpp
+test-bsearch:test-bsearch.cpp
+	g++ -o test-bsearch -std=gnu++98 -pedantic -Wall -Werror test-bsearch.cpp

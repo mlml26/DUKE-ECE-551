@@ -1,11 +1,11 @@
 #include "function.h"
 int binarySearchForZero(Function<int, int> * f, int low, int high){
   //all negative
-  if(f->invoke(high - 1) <= 0){
+  if(f->invoke(high - 1) < 0){
     return high - 1;
   }
   //all positive
-  if(f->invoke(low) >= 0){
+  if(f->invoke(low) > 0){
     return low;
   }
   if(low == high){
