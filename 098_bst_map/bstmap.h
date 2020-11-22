@@ -20,7 +20,7 @@ class BstMap: public Map<K, V>{
   virtual void add(const K & key, const V & value);
   virtual const V & lookup(const K& key) const throw (std::invalid_argument);
   virtual void remove(const K& key);
-  virtual ~BstMap<K,V>();
+  virtual ~BstMap();
   void destroy(Node *cur);
   Node *addnode(Node* current, const K &key, const V &value);
 };
