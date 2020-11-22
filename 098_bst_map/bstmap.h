@@ -22,8 +22,9 @@ class BstMap: public Map<K, V>{
   virtual void remove(const K& key);
   virtual ~BstMap<K,V>();
   void destroy(Node *cur);
+  Node *addnode(Node* current, const K &key, const V &value);
 };
-
+/*
 //add
 template<typename K, typename V>
 void BstMap<K,V>::add(const K & key, const V & value){
@@ -42,7 +43,35 @@ void BstMap<K,V>::add(const K & key, const V & value){
   }
   *cur = new Node(key, value);
 }
-
+*/
+//add
+template<typename K, typename V>
+void BstMap<K, V>::add(const K & key, const V & value) {
+  root = addnode(root, key, value);
+}
+//add helper function
+template<typename K, typename V>
+typename BstMap<K, V>::Node * BstMap<K, V>::addnode(Node * current,
+                                                    const K & key,
+                                                    const V & value) {
+  if (current == NULL) {
+    Node * ans = new Node(key, value);
+    return ans;
+  }
+  else {
+    if (key == current->key) {
+      current->value = value;
+      return current;
+    }
+    else if (key < current->key) {
+      current->left = addnode(current->left, key, value);
+    }
+    else {
+      current->right = addnode(current->right, key, value);
+    }
+    return current;
+  }
+}
 //lookup
 template<typename K, typename V>
 const V & BstMap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
