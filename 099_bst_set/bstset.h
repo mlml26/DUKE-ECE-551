@@ -55,9 +55,6 @@ BstSet<K> & BstSet<K>::operator=(const BstSet & rhs) {
   if (this != &rhs) {
     BstSet<K> tmp(rhs);
     std::swap(root, tmp.root);
-    //Node * original_root = root;
-    //root = tmp.root;
-    //tmp.root = original_root;
   }
   return *this;
 }
@@ -77,7 +74,7 @@ void BstSet<K>::destroy(Node * current) {
   destroy(current->right);
   delete current;
 }
-
+/*
 //add
 template<typename K>
 void BstSet<K>::add(const K & key) {
@@ -103,14 +100,28 @@ typename BstSet<K>::Node * BstSet<K>::addnode(Node * current, const K & key) {
     return current;
   }
 }
-
+*/
+//add
+template<typename K>
+void BstSet<K>::add(const K & key){
+  Node ** cur = &root;
+  while(*cur != NULL){
+    if(key < (*cur)->key){
+      cur = &(*cur)->left;
+    }
+    else if(key == (*cur)->key){
+      return;
+    }
+    else{
+      cur = &(*cur)->right;
+    }
+  }
+  *cur = new Node(key);
+}
 //contains
 template<typename K>
 bool BstSet<K>::contains(const K & key) const {
   Node * current = root;
-  if (current == NULL) {
-    return false;
-  }
   while (current != NULL) {
     if (key == current->key) {
       return true;
