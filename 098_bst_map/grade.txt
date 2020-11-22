@@ -1,80 +1,37 @@
-Grading at 11/22/2020:08:42:36.734311
-For commit ID 17c38bc276c611a08e740b8d2b6d127b8333a268
-Grading at Sun Nov 22 16:42:35 CST 2020
+Grading at 11/22/2020:09:00:27.500598
+For commit ID e35b1671be50ac174c9af13554ab9680f9709846
+Grading at Sun Nov 22 17:00:26 CST 2020
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -91,77 +48,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -178,77 +92,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -265,77 +136,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -352,77 +180,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -439,77 +224,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -526,77 +268,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -613,77 +312,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
@@ -700,77 +356,34 @@ The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h:2:25: error: expected template-name before ‘<’ token
- class bstmap: public Map<K, V>{
-                         ^
-bstmap.h:2:25: error: expected ‘{’ before ‘<’ token
-bstmap.h:25:53: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::add(const K & key, const V & value){
-                                                     ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:44:63: error: ‘invalid_argument’ in namespace ‘std’ does not name a type
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                               ^~~~~~~~~~~~~~~~
-bstmap.h:44:79: error: invalid use of incomplete type ‘class bstmap<K, V>’
- const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
-                                                                               ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:62:38: error: invalid use of incomplete type ‘class bstmap<K, V>’
- void bstmap<K,V>::remove(const K& key){
-                                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
-bstmap.h:100:22: error: invalid use of incomplete type ‘class bstmap<K, V>’
- bstmap<K,V>::~bstmap(){
-                      ^
-bstmap.h:2:7: note: declaration of ‘class bstmap<K, V>’
- class bstmap: public Map<K, V>{
-       ^~~~~~
 89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
  typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
          ^~~~~~
          bstmap
-89-tester.cpp:55:9: error: ‘Map’ does not name a type
- typedef Map<KEYTYPE,VALTYPE> MapTy;
-         ^~~
 89-tester.cpp: In function ‘int main()’:
 89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
    ^~~~~~~~
+89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
+   BSTMapTy * bmt = new BSTMapTy();
+   ^~~~~~~~
+   MapTy
 89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
    BSTMapTy * bmt = new BSTMapTy();
               ^~~
 89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * bmt = new BSTMapTy();
                         ^~~~~~~~
-89-tester.cpp:71:3: error: ‘MapTy’ was not declared in this scope
-   MapTy * m = bmt;
-   ^~~~~
-89-tester.cpp:71:11: error: ‘m’ was not declared in this scope
-   MapTy * m = bmt;
-           ^
-89-tester.cpp:71:11: note: suggested alternative: ‘tm’
-   MapTy * m = bmt;
-           ^
-           tm
 89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
    BSTMapTy * m2 = new BSTMapTy(*bmt);
               ^~
+89-tester.cpp:95:14: note: suggested alternative: ‘m’
+   BSTMapTy * m2 = new BSTMapTy(*bmt);
+              ^~
+              m
 89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
    BSTMapTy * m2 = new BSTMapTy(*bmt);
                        ^~~~~~~~
-89-tester.cpp:99:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
-89-tester.cpp:134:14: error: ‘ptr’ was not declared in this scope
-       MapTy* ptr = (((i+j)&1)==0)? m : m2;
-              ^~~
 89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
    delete bmt;
           ^~~
