@@ -1,6 +1,7 @@
 #include "map.h"
 #include <exception>
 #include <cstdlib>
+
 template<typename K, typename V>
 class BstMap: public Map<K, V>{
  public:
@@ -17,13 +18,46 @@ class BstMap: public Map<K, V>{
 
  public:
   BstMap(): root(NULL){};
+  BstMap(const BstMap & rhs);
+  BstMap & operator=(const BstMap & rhs);
   virtual void add(const K & key, const V & value);
   virtual const V & lookup(const K& key) const throw (std::invalid_argument);
   virtual void remove(const K& key);
+  Node *copy(Node *current);
   virtual ~BstMap();
   void destroy(Node *cur);
   Node *addnode(Node* current, const K &key, const V &value);
 };
+//copy constructor
+template<typename K, typename V>
+BstMap<K, V>::BstMap(const BstMap & rhs) {
+  root = copy(rhs.root);
+}
+//copy helper function
+template<typename K, typename V>
+typename BstMap<K, V>::Node * BstMap<K, V>::copy(Node * current) {
+  if (current == NULL) {
+    return NULL;
+  }
+  Node * mynode = new Node(current->key, current->value);
+  mynode->left = copy(current->left);
+  mynode->right = copy(current->right);
+  return mynode;
+}
+
+//assignment operator
+template<typename K, typename V>
+BstMap<K, V> & BstMap<K, V>::operator=(const BstMap & rhs) {
+  if (this != &rhs) {
+    BstMap<K, V> tmp(rhs);
+    std::swap(root, tmp.root);
+    //Node * original_root = root;
+    //root = tmp.root;
+    //tmp.root = original_root;
+  }
+  return *this;
+}
+
 /*
 //add
 template<typename K, typename V>
