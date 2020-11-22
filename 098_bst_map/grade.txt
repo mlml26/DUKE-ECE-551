@@ -1,6 +1,6 @@
-Grading at 11/22/2020:10:22:22.039286
-For commit ID 1b3b0318e7b1d7062eed82ef7ddb15963e8692b7
-Grading at Sun Nov 22 18:22:17 CST 2020
+Grading at 11/22/2020:13:40:04.507038
+For commit ID ebe82f61c40b35dcbc28f2348d3b634964ea5cb0
+Grading at Sun Nov 22 21:39:55 CST 2020
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
@@ -18,27 +18,17 @@ Testcase passed
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = int; V = Tester]’:
-89-tester.cpp:197:1:   required from here
-bstmap.h:71:21: error: no match for ‘operator=’ (operand types are ‘Tester’ and ‘const int’)
-       (*cur)->value = key;
-       ~~~~~~~~~~~~~~^~~~~
-89-tester.cpp:6:7: note: candidate: Tester& Tester::operator=(const Tester&)
- class Tester{
-       ^~~~~~
-89-tester.cpp:6:7: note:   no known conversion for argument 1 from ‘const int’ to ‘const Tester&’
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = std::__cxx11::basic_string<char>; V = int]’:
-89-tester.cpp:197:1:   required from here
-bstmap.h:71:21: error: cannot convert ‘const std::__cxx11::basic_string<char>’ to ‘int’ in assignment
-       (*cur)->value = key;
-       ~~~~~~~~~~~~~~^~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
@@ -49,54 +39,24 @@ Testcase passed
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
-89-tester.cpp:197:1:   required from here
-bstmap.h:71:21: error: no match for ‘operator=’ (operand types are ‘Tester’ and ‘const std::__cxx11::basic_string<char>’)
-       (*cur)->value = key;
-       ~~~~~~~~~~~~~~^~~~~
-89-tester.cpp:6:7: note: candidate: Tester& Tester::operator=(const Tester&)
- class Tester{
-       ^~~~~~
-89-tester.cpp:6:7: note:   no known conversion for argument 1 from ‘const std::__cxx11::basic_string<char>’ to ‘const Tester&’
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = Tester; V = int]’:
-89-tester.cpp:197:1:   required from here
-bstmap.h:71:21: error: cannot convert ‘const Tester’ to ‘int’ in assignment
-       (*cur)->value = key;
-       ~~~~~~~~~~~~~~^~~~~
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-In file included from 89-tester.cpp:1:0:
-bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
-89-tester.cpp:197:1:   required from here
-bstmap.h:71:21: error: no match for ‘operator=’ (operand types are ‘std::__cxx11::basic_string<char>’ and ‘const Tester’)
-       (*cur)->value = key;
-       ~~~~~~~~~~~~~~^~~~~
-In file included from /usr/include/c++/7/string:52:0,
-                 from /usr/include/c++/7/stdexcept:39,
-                 from map.h:3,
-                 from bstmap.h:1,
-                 from 89-tester.cpp:1:
-/usr/include/c++/7/bits/basic_string.h:654:7: note: candidate: std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
-       operator=(const basic_string& __str)
-       ^~~~~~~~
-/usr/include/c++/7/bits/basic_string.h:654:7: note:   no known conversion for argument 1 from ‘const Tester’ to ‘const std::__cxx11::basic_string<char>&’
-/usr/include/c++/7/bits/basic_string.h:693:7: note: candidate: std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
-       operator=(const _CharT* __s)
-       ^~~~~~~~
-/usr/include/c++/7/bits/basic_string.h:693:7: note:   no known conversion for argument 1 from ‘const Tester’ to ‘const char*’
-/usr/include/c++/7/bits/basic_string.h:704:7: note: candidate: std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(_CharT) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
-       operator=(_CharT __c)
-       ^~~~~~~~
-/usr/include/c++/7/bits/basic_string.h:704:7: note:   no known conversion for argument 1 from ‘const Tester’ to ‘char’
-The code did not compile.  This test failed.
+The code compiled.
+  - Valgrind was clean (no errors, no memory leaks)
+Your file matched the expected output
+Testcase passed 
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
@@ -105,4 +65,4 @@ The code compiled.
 Your file matched the expected output
 Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
