@@ -68,7 +68,7 @@ void BstMap<K,V>::add(const K & key, const V & value){
       cur = &(*cur)->left;
     }
     else if(key == (*cur)->key){
-      (*cur)->value = key;
+      (*cur)->value = value;
       return;
     }
     else{
