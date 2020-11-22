@@ -1,6 +1,6 @@
-Grading at 11/22/2020:13:40:04.507038
-For commit ID ebe82f61c40b35dcbc28f2348d3b634964ea5cb0
-Grading at Sun Nov 22 21:39:55 CST 2020
+Grading at 11/22/2020:15:46:59.624215
+For commit ID 6641c89ce7057855110d293a2973207e2fb6cb8c
+Grading at Sun Nov 22 23:46:50 CST 2020
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
