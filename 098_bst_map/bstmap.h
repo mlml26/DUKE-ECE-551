@@ -16,11 +16,11 @@ class BstMap: public Map<K, V>{
   Node * root;
 
  public:
-  bstmap(): root(NULL){};
+  BstMap(): root(NULL){};
   virtual void add(const K & key, const V & value);
   virtual const V & lookup(const K& key) const throw (std::invalid_argument);
   virtual void remove(const K& key);
-  virtual ~bstmap<K,V>();
+  virtual ~BstMap<K,V>();
   void destroy(Node *cur);
 };
 
@@ -101,7 +101,7 @@ void BstMap<K,V>::remove(const K& key){
 
 //destructor
 template<typename K, typename V>
-BstMap<K,V>::~bstmap(){
+BstMap<K,V>::~BstMap(){
   destroy(root);
 }
 
