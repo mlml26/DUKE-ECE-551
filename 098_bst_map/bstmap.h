@@ -1,3 +1,6 @@
+#include "map.h"
+#include <exception>
+#include <cstdlib>
 template<typename K, typename V>
 class bstmap: public Map<K, V>{
  private:
@@ -18,7 +21,8 @@ class bstmap: public Map<K, V>{
   virtual const V & lookup(const K& key) const throw (std::invalid_argument);
   virtual void remove(const K& key);
   virtual ~bstmap<K,V>();
-}
+  void destroy(Node *cur);
+};
 
 //add
 template<typename K, typename V>
@@ -29,7 +33,7 @@ void bstmap<K,V>::add(const K & key, const V & value){
       cur = &(*cur)->left;
     }
     else if(key == (*cur)->key){
-      *cur->value = key;
+      (*cur)->value = key;
       return;
     }
     else{
@@ -98,9 +102,15 @@ void bstmap<K,V>::remove(const K& key){
 //destructor
 template<typename K, typename V>
 bstmap<K,V>::~bstmap(){
-  if(root != NULL){
-    destroy(root->left);
-    destroy(root->right);
-    delete root;
+  destroy(root);
+}
+
+//destructor helper function
+template<typename K,typename V>
+void bstmap<K,V>::destroy(Node *cur){
+  if(cur != NULL){
+    destroy(cur->left);
+    destroy(cur->right);
+    delete cur;
   }
 }
