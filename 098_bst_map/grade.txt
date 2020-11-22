@@ -1,401 +1,298 @@
-Grading at 11/22/2020:09:00:27.500598
-For commit ID e35b1671be50ac174c9af13554ab9680f9709846
-Grading at Sun Nov 22 17:00:26 CST 2020
+Grading at 11/22/2020:09:04:28.736068
+For commit ID c68f4dc16040e3c82e10cc61cc35871de5af1bb1
+Grading at Sun Nov 22 17:04:27 CST 2020
 -----------------------------------------------
 testcase 1 : Testing with BstMap<int,int>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 2 : Testing with BstMap<int,std::string>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 3 : Testing with BstMap<int,(a custom class we wrote)>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = int; V = Tester]’:
+89-tester.cpp:197:1:   required from here
+bstmap.h:36:21: error: no match for ‘operator=’ (operand types are ‘Tester’ and ‘const int’)
+       (*cur)->value = key;
+       ~~~~~~~~~~~~~~^~~~~
+89-tester.cpp:6:7: note: candidate: Tester& Tester::operator=(const Tester&)
+ class Tester{
+       ^~~~~~
+89-tester.cpp:6:7: note:   no known conversion for argument 1 from ‘const int’ to ‘const Tester&’
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 4 : Testing with BstMap<std::string,int>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = std::__cxx11::basic_string<char>; V = int]’:
+89-tester.cpp:197:1:   required from here
+bstmap.h:36:21: error: cannot convert ‘const std::__cxx11::basic_string<char>’ to ‘int’ in assignment
+       (*cur)->value = key;
+       ~~~~~~~~~~~~~~^~~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 5 : Testing with BstMap<std::string,std::string>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 6 : Testing with BstMap<std::string,(a custom class we wrote)>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = std::__cxx11::basic_string<char>; V = Tester]’:
+89-tester.cpp:197:1:   required from here
+bstmap.h:36:21: error: no match for ‘operator=’ (operand types are ‘Tester’ and ‘const std::__cxx11::basic_string<char>’)
+       (*cur)->value = key;
+       ~~~~~~~~~~~~~~^~~~~
+89-tester.cpp:6:7: note: candidate: Tester& Tester::operator=(const Tester&)
+ class Tester{
+       ^~~~~~
+89-tester.cpp:6:7: note:   no known conversion for argument 1 from ‘const std::__cxx11::basic_string<char>’ to ‘const Tester&’
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 7 : Testing with BstMap<(a custom class we wrote),int>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = Tester; V = int]’:
+89-tester.cpp:197:1:   required from here
+bstmap.h:36:21: error: cannot convert ‘const Tester’ to ‘int’ in assignment
+       (*cur)->value = key;
+       ~~~~~~~~~~~~~~^~~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 8 : Testing with BstMap<(a custom class we wrote),std::string>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+bstmap.h: In instantiation of ‘void BstMap<K, V>::add(const K&, const V&) [with K = Tester; V = std::__cxx11::basic_string<char>]’:
+89-tester.cpp:197:1:   required from here
+bstmap.h:36:21: error: no match for ‘operator=’ (operand types are ‘std::__cxx11::basic_string<char>’ and ‘const Tester’)
+       (*cur)->value = key;
+       ~~~~~~~~~~~~~~^~~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/stdexcept:39,
+                 from map.h:3,
+                 from bstmap.h:1,
+                 from 89-tester.cpp:1:
+/usr/include/c++/7/bits/basic_string.h:654:7: note: candidate: std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
+       operator=(const basic_string& __str)
+       ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:654:7: note:   no known conversion for argument 1 from ‘const Tester’ to ‘const std::__cxx11::basic_string<char>&’
+/usr/include/c++/7/bits/basic_string.h:693:7: note: candidate: std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
+       operator=(const _CharT* __s)
+       ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:693:7: note:   no known conversion for argument 1 from ‘const Tester’ to ‘const char*’
+/usr/include/c++/7/bits/basic_string.h:704:7: note: candidate: std::__cxx11::basic_string<_CharT, _Traits, _Alloc>& std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::operator=(_CharT) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
+       operator=(_CharT __c)
+       ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:704:7: note:   no known conversion for argument 1 from ‘const Tester’ to ‘char’
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 -----------------------------------------------
 testcase 9 : Testing with BstMap<(a custom class we wrote),(a custom class we wrote)>
 ...compiling...
-89-tester.cpp:54:9: error: ‘BstMap’ does not name a type; did you mean ‘bstmap’?
- typedef BstMap<KEYTYPE,VALTYPE> BSTMapTy;
-         ^~~~~~
-         bstmap
-89-tester.cpp: In function ‘int main()’:
-89-tester.cpp:70:3: error: ‘BSTMapTy’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-89-tester.cpp:70:3: note: suggested alternative: ‘MapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-   ^~~~~~~~
-   MapTy
-89-tester.cpp:70:14: error: ‘bmt’ was not declared in this scope
-   BSTMapTy * bmt = new BSTMapTy();
-              ^~~
-89-tester.cpp:70:24: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * bmt = new BSTMapTy();
-                        ^~~~~~~~
-89-tester.cpp:95:14: error: ‘m2’ was not declared in this scope
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-89-tester.cpp:95:14: note: suggested alternative: ‘m’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-              ^~
-              m
-89-tester.cpp:95:23: error: expected type-specifier before ‘BSTMapTy’
-   BSTMapTy * m2 = new BSTMapTy(*bmt);
-                       ^~~~~~~~
-89-tester.cpp:164:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:166:17: error: expected type-specifier before ‘BSTMapTy’
-   m = bmt = new BSTMapTy();
-                 ^~~~~~~~
-89-tester.cpp:194:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete bmt;
-          ^~~
-89-tester.cpp:195:10: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
-   delete m2;
-          ^~
+In file included from 89-tester.cpp:1:0:
+bstmap.h:19:10: error: ISO C++ forbids declaration of ‘bstmap’ with no type [-fpermissive]
+   bstmap(): root(NULL){};
+          ^
+bstmap.h:23:12: error: declaration of ‘~bstmap’ as non-function
+   virtual ~bstmap<K,V>();
+            ^~~~~~
+bstmap.h:23:12: error: expected ‘;’ at end of member declaration
+bstmap.h:23:18: error: expected unqualified-id before ‘<’ token
+   virtual ~bstmap<K,V>();
+                  ^
+bstmap.h: In member function ‘int BstMap<K, V>::bstmap()’:
+bstmap.h:19:13: error: only constructors take member initializers
+   bstmap(): root(NULL){};
+             ^~~~
+bstmap.h:19:24: error: no return statement in function returning non-void [-Werror=return-type]
+   bstmap(): root(NULL){};
+                        ^
+bstmap.h: At global scope:
+bstmap.h:104:15: error: declaration of ‘~typename BstMap<K, V>::bstmap’ as member of ‘BstMap<K, V>’
+ BstMap<K,V>::~bstmap(){
+               ^~~~~~
+cc1plus: all warnings being treated as errors
 The code did not compile.  This test failed.
 
 Overall Grade: F
