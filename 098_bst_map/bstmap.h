@@ -1,6 +1,7 @@
 #include "map.h"
 #include <exception>
 #include <cstdlib>
+#include <algorithm>
 
 template<typename K, typename V>
 class BstMap: public Map<K, V>{
@@ -46,24 +47,6 @@ typename BstMap<K,V>::Node * BstMap<K,V>::copy(Node * cur){
   }
   return NULL;
 }
-/*
-//copy constructor
-template<typename K, typename V>
-BstMap<K, V>::BstMap(const BstMap & rhs) {
-  root = copy(rhs.root);
-}
-//copy helper function
-template<typename K, typename V>
-typename BstMap<K, V>::Node * BstMap<K, V>::copy(Node * current) {
-  if (current == NULL) {
-    return NULL;
-  }
-  Node * mynode = new Node(current->key, current->value);
-  mynode->left = copy(current->left);
-  mynode->right = copy(current->right);
-  return mynode;
-}
-*/
 
 //assignment operator
 template<typename K, typename V>
