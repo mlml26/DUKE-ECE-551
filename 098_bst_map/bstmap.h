@@ -2,7 +2,7 @@
 #include <exception>
 #include <cstdlib>
 template<typename K, typename V>
-class bstmap: public Map<K, V>{
+class BstMap: public Map<K, V>{
  private:
   class Node{
   public:
@@ -26,7 +26,7 @@ class bstmap: public Map<K, V>{
 
 //add
 template<typename K, typename V>
-void bstmap<K,V>::add(const K & key, const V & value){
+void BstMap<K,V>::add(const K & key, const V & value){
   Node ** cur = &root;
   while(*cur != NULL){
     if(key < (*cur)->key){
@@ -45,7 +45,7 @@ void bstmap<K,V>::add(const K & key, const V & value){
 
 //lookup
 template<typename K, typename V>
-const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
+const V & BstMap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
   Node *cur = root;
   while(cur != NULL){
     if(cur->key == key){
@@ -63,7 +63,7 @@ const V & bstmap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
 
 //remove
 template<typename K, typename V>
-void bstmap<K,V>::remove(const K& key){
+void BstMap<K,V>::remove(const K& key){
   Node ** cur = &root;
   while(*cur != NULL){
     if(key < (*cur)->key){
@@ -101,13 +101,13 @@ void bstmap<K,V>::remove(const K& key){
 
 //destructor
 template<typename K, typename V>
-bstmap<K,V>::~bstmap(){
+BstMap<K,V>::~bstmap(){
   destroy(root);
 }
 
 //destructor helper function
 template<typename K,typename V>
-void bstmap<K,V>::destroy(Node *cur){
+void BstMap<K,V>::destroy(Node *cur){
   if(cur != NULL){
     destroy(cur->left);
     destroy(cur->right);
