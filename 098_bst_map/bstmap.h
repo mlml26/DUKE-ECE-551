@@ -58,7 +58,7 @@ BstMap<K, V> & BstMap<K, V>::operator=(const BstMap & rhs) {
   return *this;
 }
 
-/*
+
 //add
 template<typename K, typename V>
 void BstMap<K,V>::add(const K & key, const V & value){
@@ -77,7 +77,7 @@ void BstMap<K,V>::add(const K & key, const V & value){
   }
   *cur = new Node(key, value);
 }
-*/
+/*
 //add
 template<typename K, typename V>
 void BstMap<K, V>::add(const K & key, const V & value) {
@@ -106,7 +106,8 @@ typename BstMap<K, V>::Node * BstMap<K, V>::addnode(Node * current,
     return current;
   }
 }
-/*
+*/
+
 //lookup
 template<typename K, typename V>
 const V & BstMap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
@@ -124,7 +125,8 @@ const V & BstMap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
   }
   throw std::invalid_argument("key not find\n");
 }
-*/
+
+/*
 //lookup
 template<typename K, typename V>
 const V & BstMap<K, V>::lookup(const K & key) const throw(std::invalid_argument) {
@@ -147,7 +149,8 @@ const V & BstMap<K, V>::lookup(const K & key) const throw(std::invalid_argument)
   }
   return current->value;
 }
-/*
+*/
+
 //remove
 template<typename K, typename V>
 void BstMap<K,V>::remove(const K& key){
@@ -185,8 +188,8 @@ void BstMap<K,V>::remove(const K& key){
     }
   }
 }
-*/
 
+/*
 //remove
 template<typename K, typename V>
 void BstMap<K, V>::remove(const K & key) {
@@ -229,7 +232,8 @@ void BstMap<K, V>::remove(const K & key) {
     (*current)->value = tempvalue;
   }
 }
-/*
+*/
+
 //destructor
 template<typename K, typename V>
 BstMap<K,V>::~BstMap(){
@@ -245,7 +249,7 @@ void BstMap<K,V>::destroy(Node *cur){
     delete cur;
   }
 }
-*/
+/*
 //destructor
 template<typename K, typename V>
 BstMap<K, V>::~BstMap() {
@@ -261,3 +265,4 @@ void BstMap<K, V>::destroy(Node * current) {
   destroy(current->right);
   delete current;
 }
+*/
