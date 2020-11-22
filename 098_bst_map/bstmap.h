@@ -3,7 +3,7 @@
 #include <cstdlib>
 template<typename K, typename V>
 class BstMap: public Map<K, V>{
- private:
+ public:
   class Node{
   public:
     K key;
@@ -60,7 +60,7 @@ const V & BstMap<K,V>::lookup(const K& key) const throw (std::invalid_argument){
   }
   throw std::invalid_argument("key not find\n");
 }
-
+/*
 //remove
 template<typename K, typename V>
 void BstMap<K,V>::remove(const K& key){
@@ -96,6 +96,50 @@ void BstMap<K,V>::remove(const K& key){
       }
       break;
     }
+  }
+}
+*/
+
+//remove
+template<typename K, typename V>
+void BstMap<K, V>::remove(const K & key) {
+  Node ** current = &root;
+  while (*current != NULL) {
+    if (key == (*current)->key) {
+      break;
+    }
+    else if (key < (*current)->key) {
+      current = &(*current)->left;
+    }
+    else {
+      current = &(*current)->right;
+    }
+  }
+  if (*current == NULL) {
+    //return;
+    throw std::invalid_argument("key not find\n");
+  }
+  if ((*current)->left == NULL) {
+    Node * temp = (*current)->right;
+    delete (*current);
+    *current = temp;
+  }
+  else if ((*current)->right == NULL) {
+    Node * temp = (*current)->left;
+    delete (*current);
+    *current = temp;
+  }
+  else {
+    Node * findnode = (*current)->left;
+    while (findnode->right != NULL) {
+      findnode = findnode->right;
+    }
+    //Node * similarnode = similar((*current)->left);
+    K tempkey = findnode->key;
+    V tempvalue = findnode->value;
+    remove(findnode->key);
+    (*current)->key = tempkey;
+    (*current)->value = tempvalue;
   }
 }
 
