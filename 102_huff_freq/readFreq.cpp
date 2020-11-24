@@ -21,4 +21,19 @@ void printSym(std::ostream & s, unsigned sym) {
 }
 uint64_t * readFrequencies(const char * fname) {
   //WRITE ME!
+  uint64_t * array = new unit64_t[257]();
+  FILE *f = fopen(fname, "r");
+  if(f == NULL){
+    std::cerr << "Cannot open file" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  while((c = fgetc(f)) != EOF){
+    array[c]++;
+  }
+  array[256] = 1;
+  if(fclose(f)!=0){
+    std::cerr << "Cannot closing file" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  return array;
 }
