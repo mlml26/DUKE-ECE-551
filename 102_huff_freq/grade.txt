@@ -1,19 +1,32 @@
-Grading at 11/24/2020:11:08:19.927446
-For commit ID 95f66534c0c129d431ae739d3ecc1c70304ec5c3
-Grading at Tue Nov 24 19:08:19 CST 2020
+Grading at 11/24/2020:11:09:53.577107
+For commit ID 2422a3459212da6d7fee79d2231cee9232bb6ec3
+Grading at Tue Nov 24 19:09:50 CST 2020
 compiling
 g++ -ggdb3 -Wall -Werror -pedantic -o testFreq testFreq.cpp readFreq.cpp
-readFreq.cpp: In function ‘uint64_t* readFrequencies(const char*)’:
-readFreq.cpp:24:26: error: ‘unit64_t’ does not name a type; did you mean ‘uint64_t’?
-   uint64_t * array = new unit64_t[257]();
-                          ^~~~~~~~
-                          uint64_t
-readFreq.cpp:30:10: error: ‘c’ was not declared in this scope
-   while((c = fgetc(f)) != EOF){
-          ^
-Makefile:2: recipe for target 'testFreq' failed
-make: *** [testFreq] Error 1
-make failed
-Make succeeded, but testFreq does not exist (did you change the targets?)
+Make succeed, testFreq created
+Testcase 1
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
+Testcase 2
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
+Testcase 3
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
+Testcase 4
+-----------------------
+  - Valgrind was clean (no errors, no memory leaks)
+Checking output:
+Your file matched the expected output
+Testcase passed 
 
-Overall Grade: F
+Overall Grade: A
