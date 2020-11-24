@@ -1,0 +1,19 @@
+Grading at 11/24/2020:11:08:19.927446
+For commit ID 95f66534c0c129d431ae739d3ecc1c70304ec5c3
+Grading at Tue Nov 24 19:08:19 CST 2020
+compiling
+g++ -ggdb3 -Wall -Werror -pedantic -o testFreq testFreq.cpp readFreq.cpp
+readFreq.cpp: In function ‘uint64_t* readFrequencies(const char*)’:
+readFreq.cpp:24:26: error: ‘unit64_t’ does not name a type; did you mean ‘uint64_t’?
+   uint64_t * array = new unit64_t[257]();
+                          ^~~~~~~~
+                          uint64_t
+readFreq.cpp:30:10: error: ‘c’ was not declared in this scope
+   while((c = fgetc(f)) != EOF){
+          ^
+Makefile:2: recipe for target 'testFreq' failed
+make: *** [testFreq] Error 1
+make failed
+Make succeeded, but testFreq does not exist (did you change the targets?)
+
+Overall Grade: F
