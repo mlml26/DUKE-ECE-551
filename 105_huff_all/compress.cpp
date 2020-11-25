@@ -32,7 +32,25 @@ void writeCompressedOutput(const char* inFile,
 
   //WRITE YOUR CODE HERE!
   //open the input file for reading
-
+  FILE *f = fopen(inFile, "r");
+  if(f == NULL){
+    std::cerr << "cannot open file" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  int c;
+  while((c = fgetc(f)) != EOF){
+    if(theMap.find(c) == theMap.end()){
+      std::cerr << "Cannot find the character" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    bfw.writeBitString(theMap.find(c)->second);
+  }
+  bfw.writeBitString(theMap.find(256)->second);
+  if(fclose(f) != 0){
+    std::cerr << "cannot close file" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  
   //You need to read the input file, lookup the characters in the map,
   //and write the proper bit string with the BitFileWriter
 
@@ -51,7 +69,14 @@ int main(int argc, char ** argv) {
   //Implement main
   //hint 1: most of the work is already done. 
   //hint 2: you can look at the main from the previous tester for 90% of this
-
-
+  uint64_t * counts = readFrequencies(argv[1]);
+  assert(counts != NULL);
+  Node * tree = buildTree(counts);
+  delete[] counts;
+  std::map<unsigned, BitString> theMap;
+  BitString bitstring;
+  tree->buildMap(bitstring, theMap);
+  writeCompressedOutput(argv[1],argv[2],theMap);
+  delete tree;
   return EXIT_SUCCESS;
 }
