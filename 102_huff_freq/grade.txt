@@ -1,6 +1,6 @@
-Grading at 11/24/2020:11:09:53.577107
-For commit ID 2422a3459212da6d7fee79d2231cee9232bb6ec3
-Grading at Tue Nov 24 19:09:50 CST 2020
+Grading at 11/25/2020:12:46:44.460169
+For commit ID f7af3af9f8e187aa2ebca550dece29ac92168c1b
+Grading at Wed Nov 25 20:46:40 CST 2020
 compiling
 g++ -ggdb3 -Wall -Werror -pedantic -o testFreq testFreq.cpp readFreq.cpp
 Make succeed, testFreq created
