@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cstdlib>
+#include <set>
+#include <unordered_map>
 using namespace std;
+
 
 int main(int argc, char **argv){
   vector<string> file2 = getLines(argv[2]);
