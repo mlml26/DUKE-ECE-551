@@ -1,0 +1,8 @@
+animal:dragon
+animal:walrus
+animal:linyizheng
+place:cave
+place:DKU
+adjective:peculiar
+adjective:scary
+adjective:peaceful
