@@ -16,37 +16,52 @@ book::~book(){
 
 void book::readPages(string directory){
   string path1(directory);
-  path1.append("\1.txt");
+  //path1.push_back('/');
+  path1.append("/page1.txt");
   Page p1;
   p1.read(path1);
+  p1.checkNavigation();
   pages.push_back(p1);
   int pageIndex = 2;
   try{
     while(1){
       Page p;
       string path(directory);
-      path.push_back('\\');
+      //path.push_back('/');
+      path.append("/page");
       path.append(to_string(pageIndex));
       path.append(".txt");
       pageIndex++;
       p.read(path);
+      p.checkNavigation();
+      //test
+      //cout << "after navigation\n";
       pages.push_back(p);
     }
   }
   catch(Failure &excep){
     //do nothing
   }
+  //test
+  cout << pages.size() << endl;
 }
 
 void book::checkStory(){
   for(size_t i =0; i < pages.size(); i++){
+    //cout << "enter \n";
+    cout << pages[i].choicePage.size() << endl;
     for(size_t j=0; j<pages[i].choicePage.size(); j++){
+      //test
+      cout << pages[i].choicePage.size() << endl;
       if((unsigned)pages[i].choicePage[j] > pages.size()){
 	throw Failure("page that is referenced by a choice is invalid");
-	pageReferenced.insert(pages[i].choicePage[j]);
+	//pageReferenced.insert(pages[i].choicePage[j]);
       }
+      pageReferenced.insert(pages[i].choicePage[j]);
     }
   }
+  //test
+  cout << pageReferenced.size() << endl;
   if(pageReferenced.size() < (pages.size() -1)){
     throw Failure("Every page should be referenced by at least once");
   }
@@ -69,14 +84,23 @@ void book::beginStory(){
   pages[0].printPage();
   int cur_cat = 3;
   while(cur_cat == 3){
-    string choice("w");
+    string choice("-1w");
     size_t idx;
+    //long number = 0;
     long number = stol(choice, &idx, 10);
     size_t index = 0;
+    //cout << number << endl;
     while(idx < choice.size() || number <= 0 || (unsigned)number > pages[index].choicePage.size()){
       cout << "Please enter your choice: ";
       getline(cin, choice);
-      number = stol(choice, &idx, 10);
+      
+      //  number = stol(choice, &idx, 10);
+      try{
+	number = stol(choice, &idx, 10);
+      }
+      catch(invalid_argument &ie){
+      //donothing
+      }
     }
     index = number;
     pages[index].printPage();

@@ -19,5 +19,9 @@ int main(int argc, char ** argv){
   catch(Failure &excp){
     cerr << excp.what();
     return(EXIT_FAILURE);
-  } 
+  }
+  catch(invalid_argument &ie){
+    cerr << "Out of range" << ie.what();
+    return(EXIT_FAILURE);
+  }
 }

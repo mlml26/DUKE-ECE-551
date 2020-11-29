@@ -1,6 +1,5 @@
-47:Try to sneak past
-2:Leave the\n-
-32:Draw your\n
+2:Try to sneak past
+3:Leave the\
 #sdsdadsafsafsafasfsafasfsafasfsafasfas
 WENXUESEN
 WENXUESEN

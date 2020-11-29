@@ -37,6 +37,7 @@ void Page::read(string filename){
 }
 
 void Page::checkNavigation(){
+  //cout << "endter Navigation\n";
   if(navigation.size()==1 && navigation[0].compare("WIN")==0){
     navigationCatogry = 1;
     return;
@@ -46,6 +47,7 @@ void Page::checkNavigation(){
     return;
   }
   else{
+    //cout << "enter choice 3\n";
     for(size_t i = 0; i < navigation.size(); i++){
       size_t found = navigation[i].find(':');
       if(found != string::npos){
@@ -56,6 +58,8 @@ void Page::checkNavigation(){
 	}
 	//add
 	choicePage.push_back(number);
+	//test
+	//cout << "choicePage: " << number << endl;
       }
       else{
 	throw Failure("each line must have a colon");

@@ -1,3 +1,5 @@
+#ifndef __FUNCTION_H__
+#define __FUNCTION_H__
 #include <string>
 #include <iostream>
 #include <exception>
@@ -19,3 +21,4 @@ public:
 };
 
 //vector<Page> readEachPage(string directory);
+#endif
