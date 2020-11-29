@@ -10,9 +10,15 @@ int main(int argc, char ** argv){
     error("wrong input");
   }
   Page mypage;
-  mypage.read(argv[1]);
-  int navigationCatogry;
-  navigationCatogry = mypage.checkNavigation();
-  mypage.printPage(navigationCatogry);
-  return EXIT_SUCCESS;
+  try{
+    mypage.read(argv[1]);
+    int navigationCatogry;
+    navigationCatogry = mypage.checkNavigation();
+    mypage.printPage(navigationCatogry);
+    return EXIT_SUCCESS;
+  }
+  catch(Failure &excp){
+    cerr << excp.what();
+    return(EXIT_FAILURE);
+  } 
 }

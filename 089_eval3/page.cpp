@@ -13,7 +13,6 @@ void Page::read(string filename){
   string line;
   ifstream myfile(filename);
   int flag = 0;
-  //int flag_cur = 0;
   if(myfile.is_open()){
     while(getline(myfile, line)){
       if(line[0] == '#' && !flag){
@@ -25,18 +24,14 @@ void Page::read(string filename){
       else{
 	text.push_back(line);
       }
-      //test
-      //cout << line;
     }
     if(!flag){
-      error("invalid input page(No # sign)");
+      throw Failure("invalid input page(No # sign)");
     }
     myfile.close();
   }
   else{
-    //cerr << "Cannot open file" << endl;
-    //exit(EXIT_FAILURE);
-    error("Cannot open file");
+     error("Cannot open file");
   }
 }
 
@@ -53,13 +48,12 @@ int Page::checkNavigation(){
       if(found != string::npos){
 	size_t idx;
 	long number = stol(navigation[i], &idx, 10);
-	//cout << "number is" << number << endl;
 	if(idx < found || number <= 0){
-	  error("page number must be a positive integer");
+	  throw Failure("page number must be a positive integer");
 	}
       }
       else{
-	error("each line must have a colon");
+	throw Failure("each line must have a colon");
       }
     }
     return 3;
