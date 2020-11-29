@@ -77,7 +77,8 @@ void Page::printPage(int navigationCatogry){
     for(size_t i =0; i<navigation.size();i++){
       size_t found = navigation[i].find(':');
       cout << " ";
-      cout << navigation[i].substr(0,found);
+      //cout << navigation[i].substr(0,found);
+      cout << i+1;
       cout << ". ";
       cout << navigation[i].substr(found+1) << endl;
     }
