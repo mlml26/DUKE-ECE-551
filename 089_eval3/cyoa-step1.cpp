@@ -12,9 +12,8 @@ int main(int argc, char ** argv){
   Page mypage;
   try{
     mypage.read(argv[1]);
-    int navigationCatogry;
-    navigationCatogry = mypage.checkNavigation();
-    mypage.printPage(navigationCatogry);
+    mypage.checkNavigation();
+    mypage.printPage();
     return EXIT_SUCCESS;
   }
   catch(Failure &excp){

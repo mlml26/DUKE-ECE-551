@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int error(string e);
+void error(string e);
 class Failure: public std::exception
 {
 private:
@@ -17,3 +17,5 @@ public:
         return mErrMsg.c_str();
     }
 };
+
+//vector<Page> readEachPage(string directory);

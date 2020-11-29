@@ -31,16 +31,19 @@ void Page::read(string filename){
     myfile.close();
   }
   else{
-     error("Cannot open file");
+    //error("Cannot open file");
+     throw Failure("Cannot open file");
   }
 }
 
-int Page::checkNavigation(){
+void Page::checkNavigation(){
   if(navigation.size()==1 && navigation[0].compare("WIN")==0){
-    return 1;
+    navigationCatogry = 1;
+    return;
   }
   else if(navigation.size()==1 && navigation[0].compare("LOSE")==0){
-    return 2;
+    navigationCatogry = 2;
+    return;
   }
   else{
     for(size_t i = 0; i < navigation.size(); i++){
@@ -58,12 +61,12 @@ int Page::checkNavigation(){
 	throw Failure("each line must have a colon");
       }
     }
-    return 3;
+    navigationCatogry = 3;
+    return;
   }
-  //return;
 }
 
-void Page::printPage(int navigationCatogry){
+void Page::printPage(){
   for(size_t i =0; i < text.size(); i++){
     cout << text[i] << endl;
   }
@@ -85,9 +88,6 @@ void Page::printPage(int navigationCatogry){
   }
   else if(navigationCatogry == 2){
     cout << "Sorry, you have lost. Better luck next time!\n";
-  }
-  else{
-    error("wrong input");
   }
 }
 

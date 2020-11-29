@@ -2,25 +2,40 @@
 #include <iostream>
 using namespace std;
 
-int error(string e){
+void error(string e){
   cerr << e << endl;
-  return(EXIT_FAILURE);
+  exit(EXIT_FAILURE);
+}
+/*
+void readEachPage(vector<Page> pages, string directory){
+  string path1(directory);
+  path1.append("\1.txt");
+  Page p1;
+  p1.read(path1);
+  pages.push_back(p1);
+  int pageIndex = 2;
+  try{
+    while(1){
+      Page p;
+      string path(directory);
+      path.push_back('\\');
+      path.append(to_string(pageIndex));
+      path.append(".txt");
+      pageIndex++;
+      p.read(path);
+      pages.push_back(p);
+    }
+  }
+  catch(Failure &excep){
+    //do nothing
+  }
 }
 
-/*
-#include <iostream>
-#include <exception>
-#include <string>
-class Failure: public std::exception
-{
-private:
-    std::string mErrMsg;
-
-public:
-  Failure(std::string errMsg):mErrMsg(errMsg){}
-    const char* what() const noexcept
-    {
-        return mErrMsg.c_str();
+void checkStory(vector<Page> pages){
+  for(size_t i=0; i< pages.size();i++){
+    for(size_t j=0; j<pages[i].choicePage.size(); j++){
+      if()
     }
-};
+  }
+}
 */

@@ -9,11 +9,12 @@ class Page{
   vector<string> navigation;
   vector<string> text;
   vector<long> choicePage;
+  int navigationCatogry;
  public:
   Page();
   //Page(vector<string> navi, vector<string> t):navigation(navi), text(t){};
   void read(string filename);
-  int checkNavigation();
-  void printPage(int navigationCatogry);
+  void checkNavigation();
+  void printPage();
   ~Page();
 };
