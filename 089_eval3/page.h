@@ -8,6 +8,7 @@ class Page{
  private:
   vector<string> navigation;
   vector<string> text;
+  vector<long> choicePage;
  public:
   Page();
   //Page(vector<string> navi, vector<string> t):navigation(navi), text(t){};

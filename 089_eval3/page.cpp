@@ -51,6 +51,8 @@ int Page::checkNavigation(){
 	if(idx < found || number <= 0){
 	  throw Failure("page number must be a positive integer");
 	}
+	//add
+	choicePage.push_back(number);
       }
       else{
 	throw Failure("each line must have a colon");
