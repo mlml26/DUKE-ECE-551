@@ -53,7 +53,8 @@ int Page::checkNavigation(){
       if(found != string::npos){
 	size_t idx;
 	long number = stol(navigation[i], &idx, 10);
-	if(idx < found && number > 0){
+	//cout << "number is" << number << endl;
+	if(idx < found || number <= 0){
 	  error("page number must be a positive integer");
 	}
       }
