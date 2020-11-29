@@ -1,30 +1,24 @@
-Grading at 11/29/2020:13:38:19.068028
-For commit ID 6dadbe216398e6fe5f188f4a5a722ef5e33c369f
-Grading at Sun Nov 29 21:38:16 CST 2020
+Grading at 11/29/2020:13:50:21.432136
+For commit ID a150ce68e14e94b3897a39cc73982074c7c45d3d
+Grading at Sun Nov 29 21:50:19 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
 rm -f *~ cyoa-step1 cyoa-step2 cyoa-step1.o cyoa-step2.o function.o page.o book.o
-g++    -c -o function.o function.cpp
-g++    -c -o page.o page.cpp
-g++    -c -o book.o book.cpp
-g++    -c -o cyoa-step1.o cyoa-step1.cpp
-gcc -o cyoa-step1 cyoa-step1.o function.o page.o book.o
-Makefile:6: recipe for target 'cyoa-step1' failed
-rm cyoa-step1.o
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
+Makefile:8: recipe for target 'book.o' failed
 The code did not compile!
 
 Step 2
 Checking that cyoa-step2 compiles
 rm -f *~ cyoa-step1 cyoa-step2 cyoa-step1.o cyoa-step2.o function.o page.o book.o
-g++    -c -o function.o function.cpp
-g++    -c -o page.o page.cpp
-g++    -c -o book.o book.cpp
-g++    -c -o cyoa-step2.o cyoa-step2.cpp
-gcc -o cyoa-step2 cyoa-step2.o function.o page.o book.o
-Makefile:6: recipe for target 'cyoa-step2' failed
-rm cyoa-step2.o
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
+Makefile:8: recipe for target 'book.o' failed
 The code did not compile!
 
 Step 3
