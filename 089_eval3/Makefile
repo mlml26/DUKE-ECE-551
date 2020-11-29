@@ -3,9 +3,9 @@ PROGS=cyoa-step1 cyoa-step2
 OBJS=$(patsubst %,%.o,$(PROGS)) function.o page.o book.o
 all: $(PROGS)
 cyoa-step%: cyoa-step%.o function.o page.o book.o
-	gcc -o $@ $^
-%.o: %.c
-	gcc $(CFLAGS) -c $<
+	g++ -o $@ $^
+%.o: %.cpp
+	g++ $(CFLAGS) -c $<
 
 .PHONY: clean
 clean:
