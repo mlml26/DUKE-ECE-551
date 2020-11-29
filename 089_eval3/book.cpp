@@ -43,16 +43,16 @@ void book::readPages(string directory){
     //do nothing
   }
   //test
-  cout << pages.size() << endl;
+  //cout << pages.size() << endl;
 }
 
 void book::checkStory(){
   for(size_t i =0; i < pages.size(); i++){
     //cout << "enter \n";
-    cout << pages[i].choicePage.size() << endl;
+    //cout << pages[i].choicePage.size() << endl;
     for(size_t j=0; j<pages[i].choicePage.size(); j++){
       //test
-      cout << pages[i].choicePage.size() << endl;
+      //cout << pages[i].choicePage.size() << endl;
       if((unsigned)pages[i].choicePage[j] > pages.size()){
 	throw Failure("page that is referenced by a choice is invalid");
 	//pageReferenced.insert(pages[i].choicePage[j]);
@@ -61,7 +61,7 @@ void book::checkStory(){
     }
   }
   //test
-  cout << pageReferenced.size() << endl;
+  //cout << pageReferenced.size() << endl;
   if(pageReferenced.size() < (pages.size() -1)){
     throw Failure("Every page should be referenced by at least once");
   }
