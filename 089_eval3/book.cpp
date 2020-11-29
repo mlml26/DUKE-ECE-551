@@ -90,8 +90,15 @@ void book::beginStory(){
     long number = stol(choice, &idx, 10);
     size_t index = 0;
     //cout << number << endl;
+    int flag = 0;
     while(idx < choice.size() || number <= 0 || (unsigned)number > pages[index].choicePage.size()){
-      cout << "Please enter your choice: ";
+      if(!flag){
+	cout << "Please enter your choice: ";
+	flag = 1;
+      }
+      else{
+	cout << "That is not a valid choice, please try again";
+      }
       getline(cin, choice);
       
       //  number = stol(choice, &idx, 10);
