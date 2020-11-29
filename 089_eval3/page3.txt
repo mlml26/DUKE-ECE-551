@@ -1,6 +1,6 @@
 47:Try to sneak past
 2:Leave the\n-
-32:Draw your\n
-sdsdadsafsafsafasfsafasfsafasfsafasfas
+-32:Draw your\n
+#sdsdadsafsafsafasfsafasfsafasfsafasfas
 WENXUESEN
 WENXUESEN
