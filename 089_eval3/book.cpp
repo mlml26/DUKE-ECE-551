@@ -1,3 +1,4 @@
+#include <exception>
 #include "page.h"
 #include "book.h"
 #include "function.h"
@@ -12,7 +13,6 @@ book::book(){
 
 book::~book(){
 }
-
 
 void book::readPages(string directory){
   string path1(directory);
@@ -41,7 +41,7 @@ void book::readPages(string directory){
 void book::checkStory(){
   for(size_t i =0; i < pages.size(); i++){
     for(size_t j=0; j<pages[i].choicePage.size(); j++){
-      if(pages[i].choicePage[j] > pages.size()){
+      if((unsigned)pages[i].choicePage[j] > pages.size()){
 	throw Failure("page that is referenced by a choice is invalid");
 	pageReferenced.insert(pages[i].choicePage[j]);
       }
@@ -73,7 +73,7 @@ void book::beginStory(){
     size_t idx;
     long number = stol(choice, &idx, 10);
     size_t index = 0;
-    while(idx < choice.size() || number <= 0 || number > pages[index].choicePage.size()){
+    while(idx < choice.size() || number <= 0 || (unsigned)number > pages[index].choicePage.size()){
       cout << "Please enter your choice: ";
       getline(cin, choice);
       number = stol(choice, &idx, 10);
