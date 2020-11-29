@@ -1,8 +1,18 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include<vector>
+using namespace std;
+
 class Page{
  private:
   vector<string> navigation;
-  string secondSection;
   vector<string> text;
  public:
- Page(vector<string> navi, string secS, vector<string> t):navigation(navi), secondSection(secS), text(t){};
-}
+  Page();
+  //Page(vector<string> navi, vector<string> t):navigation(navi), text(t){};
+  void read(string filename);
+  int checkNavigation();
+  void printPage(int navigationCatogry);
+  ~Page();
+};
