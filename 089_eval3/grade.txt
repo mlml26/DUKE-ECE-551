@@ -1,6 +1,6 @@
-Grading at 11/29/2020:05:22:23.111480
-For commit ID e6494d07b2f6b9f6ad9868baee15e1152f9e3831
-Grading at Sun Nov 29 13:22:21 CST 2020
+Grading at 11/29/2020:05:28:24.549402
+For commit ID 6323167d5f3072ac5ba85349a8accbfb34caafbb
+Grading at Sun Nov 29 13:28:23 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
@@ -12,15 +12,12 @@ g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -c page.cpp
 g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -c cyoa-step1.cpp
 g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -o cyoa-step1  function.o  page.o  cyoa-step1.o
 Testing ./cyoa-step1 story1/page1.txt 
-Line_1_did_not_match
-Line_4_did_not_match
+Line_22_did_not_match
 Your file did not match the expected ouput
 Testing ./cyoa-step1 story1/page8.txt 
-Line_1_did_not_match
-Your file did not match the expected ouput
+Your file matched the expected output
 Testing ./cyoa-step1 story1/page11.txt 
-Line_1_did_not_match
-Line_2_did_not_match
+Line_30_did_not_match
 Your file did not match the expected ouput
 
 Step 2
