@@ -1,12 +1,17 @@
-SOURCES=function.cpp  page.cpp  book.cpp  cyoa-step2.cpp 
-OBJS=$(patsubst %.cpp, %.o, $(SOURCES))
-CPPFLAGS=-ggdb3 -Wall -Werror -pedantic -std=gnu++11
+CFLAGS=-std=gnu++11 -pedantic -Wall -Werror -ggdb3
+PROGS=cyoa-step1 cyoa-step2
+OBJS=$(patsubst %,%.o,$(PROGS)) function.o page.o book.o
+all: $(PROGS)
+cyoa-step%: cyoa-step%.o function.o page.o book.o
+	gcc -o $@ $^
+%.o: %.c
+	gcc $(CFLAGS) -c $<
 
-cyoa-step2: $(OBJS)
-	g++ $(CPPFLAGS) -o cyoa-step2 $(OBJS)
-%.o: %.cpp function.h  page.h  book.h
-	g++ $(CPPFLAGS) -c $<
-
+.PHONY: clean
 clean:
-	rm cyoa-step2 *~ *.o
+	rm -f *~ $(PROGS) $(OBJS)
+
+function.o: function.h
+page.o: page.h
+book.o: book.h
 
