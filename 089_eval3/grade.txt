@@ -1,6 +1,6 @@
-Grading at 11/29/2020:05:41:58.736410
-For commit ID 1177e5e8c9b06942c2d591a4440a96a38735ba00
-Grading at Sun Nov 29 13:41:57 CST 2020
+Grading at 11/29/2020:05:50:50.144683
+For commit ID 4bfce48c68b705d44d5f5daabcc10dfc403a595b
+Grading at Sun Nov 29 13:50:49 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
@@ -12,10 +12,7 @@ g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -c page.cpp
 g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -c cyoa-step1.cpp
 g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -o cyoa-step1  function.o  page.o  cyoa-step1.o
 Testing ./cyoa-step1 story1/page1.txt 
-Line_22_did_not_match
-Line_23_did_not_match
-Line_24_did_not_match
-Your file did not match the expected ouput
+Your file matched the expected output
 Testing ./cyoa-step1 story1/page8.txt 
 Your file matched the expected output
 Testing ./cyoa-step1 story1/page11.txt 
@@ -39,7 +36,7 @@ rm cyoa-step1 *~ *.o
 Makefile:11: recipe for target 'clean' failed
 The code did not compile!
 
-Step 1: FAILED
+Step 1: PASSED
 Step 2: FAILED
 Step 3: FAILED
 Step 4: FAILED
