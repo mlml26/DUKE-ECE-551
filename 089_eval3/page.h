@@ -1,3 +1,5 @@
+#ifndef __PAGE_H__
+#define __PAGE_H__
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -5,7 +7,7 @@
 using namespace std;
 
 class Page{
- private:
+ public:
   vector<string> navigation;
   vector<string> text;
   vector<long> choicePage;
@@ -18,3 +20,5 @@ class Page{
   void printPage();
   ~Page();
 };
+
+#endif

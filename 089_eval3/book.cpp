@@ -1,4 +1,5 @@
 #include "page.h"
+#include "book.h"
 #include "function.h"
 #include <iostream>
 #include <fstream>
@@ -12,9 +13,6 @@ book::book(){
 book::~book(){
 }
 
-void book::addPage(Page &p){
-  
-}
 
 void book::readPages(string directory){
   string path1(directory);
@@ -55,10 +53,10 @@ void book::checkStory(){
   int win = 0;
   int lose = 0;
   for(size_t i=0; i<pages.size();i++){
-    if(pages[i].checkNavigation() == 1){
+    if(pages[i].navigationCatogry == 1){
       win = 1;
     }
-    else if(pages[i].checkNavigation() == 2){
+    else if(pages[i].navigationCatogry == 2){
       lose = 1;
     }
   }
@@ -68,5 +66,21 @@ void book::checkStory(){
 }
 
 void book::beginStory(){
-  pages[0].printPage
+  pages[0].printPage();
+  int cur_cat = 3;
+  while(cur_cat == 3){
+    string choice("w");
+    size_t idx;
+    long number = stol(choice, &idx, 10);
+    size_t index = 0;
+    while(idx < choice.size() || number <= 0 || number > pages[index].choicePage.size()){
+      cout << "Please enter your choice: ";
+      getline(cin, choice);
+      number = stol(choice, &idx, 10);
+    }
+    index = number;
+    pages[index].printPage();
+    cur_cat = pages[index].navigationCatogry;
+  }
+  
 }

@@ -1,3 +1,5 @@
+#ifndef __BOOK_H__
+#define __BOOK_H__
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -17,4 +19,6 @@ class book{
   void readPages(string directory);
   void checkStory();
   void beginStory();
-}
+};
+
+#endif
