@@ -1,16 +1,16 @@
-Grading at 11/29/2020:07:34:45.155773
-For commit ID c6953bd3f529d0dc5014dc8435b6e23b3f0ba4e0
-Grading at Sun Nov 29 15:34:43 CST 2020
+Grading at 11/29/2020:08:51:06.994017
+For commit ID 3944da54baf289c229399aa0dc43be612324b25d
+Grading at Sun Nov 29 16:51:05 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
 rm cyoa-step1 *~ *.o
 Makefile:11: recipe for target 'clean' failed
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++17 -c function.cpp
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++17 -c page.cpp
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++17 -c cyoa-step1.cpp
-g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++17 -o cyoa-step1  function.o  page.o  cyoa-step1.o
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -c function.cpp
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -c page.cpp
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -c cyoa-step1.cpp
+g++ -ggdb3 -Wall -Werror -pedantic -std=gnu++11 -o cyoa-step1  function.o  page.o  cyoa-step1.o
 Testing ./cyoa-step1 story1/page1.txt 
 Your file matched the expected output
 Testing ./cyoa-step1 story1/page8.txt 
