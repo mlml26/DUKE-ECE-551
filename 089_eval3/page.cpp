@@ -25,6 +25,8 @@ void Page::read(string filename){
       else{
 	text.push_back(line);
       }
+      //test
+      //cout << line;
     }
     if(!flag){
       error("invalid input page(No # sign)");
@@ -39,10 +41,10 @@ void Page::read(string filename){
 }
 
 int Page::checkNavigation(){
-  if(navigation.size()==1 && navigation[0].compare("WIN\n")){
+  if(navigation.size()==1 && navigation[0].compare("WIN")==0){
     return 1;
   }
-  else if(navigation.size()==1 && navigation[0].compare("LOSE\n")){
+  else if(navigation.size()==1 && navigation[0].compare("LOSE")==0){
     return 2;
   }
   else{
