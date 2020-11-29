@@ -66,7 +66,7 @@ int Page::checkNavigation(){
 
 void Page::printPage(int navigationCatogry){
   for(size_t i =0; i < text.size(); i++){
-    cout << text[i];
+    cout << text[i] << endl;
   }
   cout << endl;
   if(navigationCatogry == 3){
