@@ -109,7 +109,7 @@ void book::beginStory(){
       //donothing
       }
     }
-    index = number;
+    index = number - 1;
     pages[index].printPage();
     cur_cat = pages[index].navigationCatogry;
   }
