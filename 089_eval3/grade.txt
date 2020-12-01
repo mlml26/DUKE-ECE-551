@@ -1,6 +1,6 @@
-Grading at 11/30/2020:01:05:48.211906
-For commit ID d417ad2022741b03efc4cb7f76f01bacd57a7307
-Grading at Mon Nov 30 09:05:40 CST 2020
+Grading at 12/01/2020:14:11:21.992791
+For commit ID 50f7720bec4b9f2cb78e6346c38a8f8ec8a9cc82
+Grading at Tue Dec  1 22:11:18 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
@@ -30,93 +30,12 @@ g++ -o cyoa-step2 cyoa-step2.o function.o page.o book.o
 rm cyoa-step2.o
 Testing ./cyoa-step2 story1 2\n1\n
 Line_25_did_not_match
-Line_26_did_not_match
-Line_27_did_not_match
-Line_30_did_not_match
-Line_31_did_not_match
-Line_32_did_not_match
-Line_33_did_not_match
 Line_49_did_not_match
-Line_50_did_not_match
-Line_51_did_not_match
-Line_52_did_not_match
-Line_53_did_not_match
-Line_54_did_not_match
-Line_55_did_not_match
-Line_56_did_not_match
-Line_57_did_not_match
-Line_58_did_not_match
-Line_59_did_not_match
-Line_60_did_not_match
-Line_61_did_not_match
-Line_62_did_not_match
-Line_63_did_not_match
-Line_64_did_not_match
-Line_66_did_not_match
-Line_68_did_not_match
-Line_69_did_not_match
-Line_70_did_not_match
-Line_71_did_not_match
-Line_72_did_not_match
-Line_73_did_not_match
 Your file did not match the expected ouput
 Testing ./cyoa-step2 story1 1\n4\n1\n3\n
 Line_25_did_not_match
-Line_26_did_not_match
-Line_27_did_not_match
-Line_28_did_not_match
-Line_29_did_not_match
-Line_30_did_not_match
-Line_31_did_not_match
-Line_32_did_not_match
-Line_33_did_not_match
-Line_34_did_not_match
-Line_35_did_not_match
-Line_36_did_not_match
-Line_37_did_not_match
-Line_38_did_not_match
-Line_39_did_not_match
-Line_40_did_not_match
-Line_41_did_not_match
-Line_42_did_not_match
-Line_43_did_not_match
-Line_44_did_not_match
-Line_45_did_not_match
-Line_46_did_not_match
-Line_47_did_not_match
-Line_48_did_not_match
 Line_49_did_not_match
-Line_50_did_not_match
-Line_51_did_not_match
-Line_52_did_not_match
-Line_53_did_not_match
-Line_54_did_not_match
-Line_55_did_not_match
-Line_56_did_not_match
-Line_57_did_not_match
-Line_58_did_not_match
-Line_59_did_not_match
-Line_60_did_not_match
-Line_61_did_not_match
-Line_62_did_not_match
-Line_63_did_not_match
-Line_64_did_not_match
-Line_65_did_not_match
-Line_66_did_not_match
-Line_67_did_not_match
-Line_68_did_not_match
 Line_69_did_not_match
-Line_70_did_not_match
-Line_71_did_not_match
-Line_72_did_not_match
-Line_73_did_not_match
-Line_74_did_not_match
-Line_75_did_not_match
-Line_78_did_not_match
-Line_79_did_not_match
-Line_80_did_not_match
-Line_81_did_not_match
-Line_97_did_not_match
 Your file did not match the expected ouput
 
 Step 3
