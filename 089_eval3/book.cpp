@@ -83,12 +83,13 @@ void book::checkStory(){
 void book::beginStory(){
   pages[0].printPage();
   int cur_cat = 3;
+  size_t index = 0;
   while(cur_cat == 3){
     string choice("-1w");
     size_t idx;
     //long number = 0;
     long number = stol(choice, &idx, 10);
-    size_t index = 0;
+    // size_t index = 0;
     //cout << number << endl;
     int flag = 0;
     while(idx < choice.size() || number <= 0 || (unsigned)number > pages[index].choicePage.size()){
@@ -109,8 +110,16 @@ void book::beginStory(){
       //donothing
       }
     }
-    index = number - 1;
+    //index = number - 1;
+    //cout << "Page index: "<< pages[index].choicePage[number-1]-1 << endl;
+    //pages[pages[index].choicePage[number-1]-1].printPage();
+    //index = pages[index].choicePage[number-1]-1;
+    //  cout << "Choice size is " << pages[index].choicePage.size() << endl;
+    //cout << "First choice is " << pages[index].choicePage[0] << endl;
+    index = pages[index].choicePage[number-1] - 1;
+    //cout << "Page index: " << index << endl;
     pages[index].printPage();
+    //pages[index].printPage();
     cur_cat = pages[index].navigationCatogry;
   }
   
