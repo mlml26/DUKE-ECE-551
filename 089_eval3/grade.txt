@@ -1,6 +1,6 @@
-Grading at 12/01/2020:14:29:02.795630
-For commit ID 9f1a23bc76d9d9f2c65f01c339c1838f51b5e308
-Grading at Tue Dec  1 22:28:59 CST 2020
+Grading at 12/01/2020:14:30:06.193513
+For commit ID 96b8976494106b77d9179057c345feb29f6d1ea7
+Grading at Tue Dec  1 22:30:03 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
@@ -31,7 +31,6 @@ rm cyoa-step2.o
 Testing ./cyoa-step2 story1 2\n1\n
 Your file matched the expected output
 Testing ./cyoa-step2 story1 1\n4\n1\n3\n
-Line_49_did_not_match
 Your file did not match the expected ouput
 
 Step 3
