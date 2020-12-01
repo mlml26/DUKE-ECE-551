@@ -94,7 +94,7 @@ void book::beginStory(){
     int flag = 0;
     while(idx < choice.size() || number <= 0 || (unsigned)number > pages[index].choicePage.size()){
       if(!flag){
-	cout << "Please enter your choice: ";
+	//cout << "Please enter your choice: ";
 	flag = 1;
       }
       else{
