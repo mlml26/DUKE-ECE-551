@@ -98,7 +98,7 @@ void book::beginStory(){
 	flag = 1;
       }
       else{
-	//cout << "That is not a valid choice, please try again ";
+	cout << "That is not a valid choice, please try again\n";
       }
       getline(cin, choice);
       
