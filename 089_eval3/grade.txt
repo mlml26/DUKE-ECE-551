@@ -1,11 +1,11 @@
-Grading at 12/02/2020:07:22:31.043155
-For commit ID 8fa6c1a248e19fff1967f130675a409bb24db3de
-Grading at Wed Dec  2 15:22:26 CST 2020
+Grading at 12/02/2020:15:56:20.374275
+For commit ID 8e39c349ff80eb73e468e4a33299056f95871676
+Grading at Wed Dec  2 23:56:13 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o function.o page.o book.o
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
@@ -21,7 +21,7 @@ Your file matched the expected output
 
 Step 2
 Checking that cyoa-step2 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o function.o page.o book.o
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
@@ -35,7 +35,7 @@ Your file matched the expected output
 
 Step 3
 Checking that cyoa-step3 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o function.o page.o book.o
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
@@ -49,8 +49,22 @@ Your file matched the expected output
 
 Step 4
 Checking that cyoa-step4 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
-The code did not compile!
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step4 cyoa-step1.o cyoa-step2.o cyoa-step3.o cyoa-step4.o function.o page.o book.o
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c cyoa-step4.cpp
+g++ -o cyoa-step4 cyoa-step4.o function.o page.o book.o
+rm cyoa-step4.o
+Testing ./cyoa-step4 one_win 
+Line_1_did_not_match
+Line_2_did_not_match
+Your file did not match the expected ouput
+Testing ./cyoa-step4 story1
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Your output did not match the expected output
 
 Step 1: PASSED
 Step 2: PASSED
