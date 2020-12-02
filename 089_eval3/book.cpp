@@ -100,12 +100,20 @@ void book::beginStory(){
 
 void book::generateReachable(){
   reachablePages.insert(1);
+  /*
   size_t index = 0;
   while(index < reachablePages.size()){
-    for(size_t i = 0; i < pages[index].choicePage.size(); i++){
+    for(size_t i = 0; i < pages[(size_t)reachablePages[index]-1].choicePage.size(); i++){
       reachablePages.insert(pages[index].choicePage[i]);
     }
     index++;
+  }
+  */
+  set<long>::iterator it;
+  for(it = reachablePages.begin(); it != reachablePages.end(); ++it){
+    for(size_t i =0; i < pages[(size_t)*it - 1].choicePage.size(); i++){
+      reachablePages.insert(pages[(size_t)*it - 1].choicePage[i]);
+    }
   }
 }
 
