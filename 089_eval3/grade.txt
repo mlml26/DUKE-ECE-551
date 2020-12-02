@@ -1,6 +1,6 @@
-Grading at 12/02/2020:06:23:31.374172
-For commit ID d19a215fd6fc62413ff2737107167425aebb5ebb
-Grading at Wed Dec  2 14:23:26 CST 2020
+Grading at 12/02/2020:07:14:11.140216
+For commit ID 4ccf5c50eeebb2037ed9639792fb10fbe9eb0e3a
+Grading at Wed Dec  2 15:14:06 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
@@ -47,7 +47,6 @@ Your file matched the expected output
 Testing ./cyoa-step3 cycle 
 Line_1_did_not_match
 Line_2_did_not_match
-Line_3_did_not_match
 Your file did not match the expected ouput
 
 Step 4
