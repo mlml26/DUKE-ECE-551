@@ -123,7 +123,7 @@ void book::printNonReachable(){
     it = reachablePages.find(long(i));
     if(it == reachablePages.end()){
       nonReachablePages.insert(long(i));
-      cout << "Pages " << i << " is not reachable\n";
+      cout << "Page " << i << " is not reachable\n";
     }
   }
   
