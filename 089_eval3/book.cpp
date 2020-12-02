@@ -156,6 +156,7 @@ void book::dfs(){
       if(it != reachablePages.end()){
 	currentPath.push_back(*it);
 	todo.push(currentPath);
+	currentPath.pop_back();
       }
     }
   }
