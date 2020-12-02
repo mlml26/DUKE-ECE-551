@@ -20,5 +20,10 @@ public:
     }
 };
 
+class FailurePrint: public std::exception
+{
+  //nothing
+};
+
 //vector<Page> readEachPage(string directory);
 #endif

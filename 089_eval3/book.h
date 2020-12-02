@@ -13,7 +13,9 @@ class book{
   vector<Page> pages;
   set<long> pageReferenced;
   set<long> reachablePages;
-  set<long> nonReachablePages;
+  long winSelected;
+  vector<long> winPath;
+  //vector<pair<long, size_t> > winPath;
  public:
   book();
   ~book();
@@ -23,6 +25,9 @@ class book{
   void beginStory();
   void generateReachable();
   void printNonReachable();
+  void findWINPage();
+  void dfs();
+  void printWINPath();
 };
 
 #endif

@@ -6,6 +6,7 @@
 #include <fstream>
 #include <string>
 #include<vector>
+#include <stack>
 using namespace std;
 
 book::book(){
@@ -113,8 +114,62 @@ void book::printNonReachable(){
     set<long>::iterator it;
     it = reachablePages.find(long(i));
     if(it == reachablePages.end()){
-      nonReachablePages.insert(long(i));
       cout << "Page " << i << " is not reachable\n";
     }
   }
+}
+
+void book::findWINPage(){
+  int find = 0;
+  set<long>::iterator it;
+  for(it = reachablePages.begin(); it != reachablePages.end(); ++it){
+    if(pages[(size_t)*it - 1].navigationCatogry == 1){
+      find = 1;
+      winSelected = *it;
+      break;
+    }
+  }
+  if(!find){
+    cout << "There is no way to win\n";
+    throw FailurePrint();
+  }
+}
+
+void book::dfs(){
+  stack<vector<long> > todo;
+  vector<long> path;
+  path.push_back(1);
+  todo.push(path);
+  while(todo.size()!= 0){
+    // vector<long> currentPath = todo.pop();
+    vector<long> currentPath = todo.top();
+    todo.pop();
+    long currentPage = currentPath.back();
+    
+    if(currentPage == winSelected){
+      winPath = currentPath;
+      return;
+    }
+    for(size_t i = 0; i < pages[(size_t)currentPage - 1].choicePage.size(); i++){
+      set<long>::iterator it;
+      it = reachablePages.find(pages[(size_t)currentPage - 1].choicePage[i]);
+      if(it != reachablePages.end()){
+	currentPath.push_back(*it);
+	todo.push(currentPath);
+      }
+    }
+  }
+}
+
+void book::printWINPath(){
+  for(size_t i = 0; i < winPath.size() - 1; i++){
+    cout << "Page " << winPath[i] << " Choice ";
+    //long choice;
+    for(size_t j = 0; j < pages[winPath[i]-1].choicePage.size(); j++){
+      if(winPath[i+1] == pages[winPath[i]-1].choicePage[j]){
+	cout << j+1 << endl;
+      }
+    }
+  }
+  cout << "Page " << winPath.back() << " WIN\n";
 }
