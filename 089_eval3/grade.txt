@@ -1,11 +1,11 @@
-Grading at 12/01/2020:14:31:20.576559
-For commit ID 948f6015b24c0b59b669a8427c39324770079d8b
-Grading at Tue Dec  1 22:31:17 CST 2020
+Grading at 12/02/2020:06:23:31.374172
+For commit ID d19a215fd6fc62413ff2737107167425aebb5ebb
+Grading at Wed Dec  2 14:23:26 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
 Checking that cyoa-step1 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step1.o cyoa-step2.o function.o page.o book.o
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
@@ -21,7 +21,7 @@ Your file matched the expected output
 
 Step 2
 Checking that cyoa-step2 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step1.o cyoa-step2.o function.o page.o book.o
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
 g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
@@ -35,12 +35,24 @@ Your file matched the expected output
 
 Step 3
 Checking that cyoa-step3 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step1.o cyoa-step2.o function.o page.o book.o
-The code did not compile!
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c function.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c page.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c book.cpp
+g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c cyoa-step3.cpp
+g++ -o cyoa-step3 cyoa-step3.o function.o page.o book.o
+rm cyoa-step3.o
+Testing ./cyoa-step3 story1 
+Your file matched the expected output
+Testing ./cyoa-step3 cycle 
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
 
 Step 4
 Checking that cyoa-step4 compiles
-rm -f *~ cyoa-step1 cyoa-step2 cyoa-step1.o cyoa-step2.o function.o page.o book.o
+rm -f *~ cyoa-step1 cyoa-step2 cyoa-step3 cyoa-step1.o cyoa-step2.o cyoa-step3.o function.o page.o book.o
 The code did not compile!
 
 Step 1: PASSED
