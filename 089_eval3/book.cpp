@@ -100,15 +100,6 @@ void book::beginStory(){
 
 void book::generateReachable(){
   reachablePages.insert(1);
-  /*
-  size_t index = 0;
-  while(index < reachablePages.size()){
-    for(size_t i = 0; i < pages[(size_t)reachablePages[index]-1].choicePage.size(); i++){
-      reachablePages.insert(pages[index].choicePage[i]);
-    }
-    index++;
-  }
-  */
   set<long>::iterator it;
   for(it = reachablePages.begin(); it != reachablePages.end(); ++it){
     for(size_t i =0; i < pages[(size_t)*it - 1].choicePage.size(); i++){
@@ -126,17 +117,4 @@ void book::printNonReachable(){
       cout << "Page " << i << " is not reachable\n";
     }
   }
-  
-
-  /*
-  set<long>::iterator it_pages;
-  set<long>::iterator it_reachable;
-  set<long>:: allPages;
-  for(size_t i = 1; i < pages.size() + 1; i++){
-    allPages.insert((long)i);
-  }
-  for(it_pages = allPages.begin(); it_pages != allPages.end(); ++it_pages){
-    it_reachable = reachablePages.find(*it_pages);
-  }
-  */
 }

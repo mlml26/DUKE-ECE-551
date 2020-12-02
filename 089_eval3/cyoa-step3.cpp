@@ -13,10 +13,7 @@ int main(int argc, char ** argv){
   book mybook;
   try{
     mybook.readPages(argv[1]);
-    //test
-    //cout << mybook.pages.size() << endl;
     mybook.checkStory();
-    //mybook.beginStory();
     mybook.generateReachable();
     mybook.printNonReachable();
     return EXIT_SUCCESS;
