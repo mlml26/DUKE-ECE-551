@@ -12,6 +12,8 @@ class book{
  private:
   vector<Page> pages;
   set<long> pageReferenced;
+  set<long> reachablePages;
+  set<long> nonReachablePages;
  public:
   book();
   ~book();
@@ -19,6 +21,8 @@ class book{
   void readPages(string directory);
   void checkStory();
   void beginStory();
+  void generateReachable();
+  void printNonReachable();
 };
 
 #endif
