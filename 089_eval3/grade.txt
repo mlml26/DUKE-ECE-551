@@ -1,6 +1,6 @@
-Grading at 12/02/2020:15:56:20.374275
-For commit ID 8e39c349ff80eb73e468e4a33299056f95871676
-Grading at Wed Dec  2 23:56:13 CST 2020
+Grading at 12/02/2020:16:20:25.227842
+For commit ID 6d5280b619dcdc1f8c621062522030dce5d22310
+Grading at Thu Dec  3 00:20:18 CST 2020
 Doing some basic sanity checking for your submission
 
 Step 1
@@ -57,21 +57,16 @@ g++ -std=gnu++11 -pedantic -Wall -Werror -ggdb3 -c cyoa-step4.cpp
 g++ -o cyoa-step4 cyoa-step4.o function.o page.o book.o
 rm cyoa-step4.o
 Testing ./cyoa-step4 one_win 
-Line_1_did_not_match
-Line_2_did_not_match
-Your file did not match the expected ouput
+Your file matched the expected output
 Testing ./cyoa-step4 story1
-Line_1_did_not_match
-Line_2_did_not_match
-Line_3_did_not_match
-Your output did not match the expected output
+Your output matched the expected output
 
 Step 1: PASSED
 Step 2: PASSED
 Step 3: PASSED
-Step 4: FAILED
+Step 4: PASSED
 
-You have NOT passed the pregrader's test cases.
-You should go back and debug the indicated step(s).
+You have passed the pregrader's test cases, but you should still
+do extensive testing of your own.
 
 Overall Grade: NO GRADE YET
