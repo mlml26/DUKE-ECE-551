@@ -7,6 +7,11 @@
 using namespace std;
 
 void error(string e);
+
+/*
+The "Failure" class inheritate the std::exception class and overwrite
+the what() method to take a string and return that string.
+ */
 class Failure: public std::exception
 {
 private:
@@ -20,10 +25,12 @@ public:
     }
 };
 
+/*
+The "FailurePrint" class inheritate the std::exception class.
+*/
 class FailurePrint: public std::exception
 {
   //nothing
 };
 
-//vector<Page> readEachPage(string directory);
 #endif

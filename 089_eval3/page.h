@@ -14,7 +14,6 @@ class Page{
   int navigationCatogry;
  public:
   Page();
-  //Page(vector<string> navi, vector<string> t):navigation(navi), text(t){};
   void read(string filename);
   void checkNavigation();
   void printPage();

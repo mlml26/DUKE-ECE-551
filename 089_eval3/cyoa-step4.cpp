@@ -15,9 +15,8 @@ int main(int argc, char ** argv){
     mybook.readPages(argv[1]);
     mybook.checkStory();
     mybook.generateReachable();
-    //mybook.printNonReachable();
     mybook.findWINPage();
-    mybook.dfs();
+    mybook.findWINPath();
     mybook.printWINPath();
     return EXIT_SUCCESS;
   }

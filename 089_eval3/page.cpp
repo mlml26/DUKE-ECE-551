@@ -6,9 +6,15 @@
 #include<vector>
 using namespace std;
 
+//default constructor
 Page::Page(){
 }
 
+/* The "read" method takes the name of one single page as input
+   and store the page information into the navigation, text
+   field. It also throw an exception if the page do not
+   have a signle line that starts with a # sign.
+*/
 void Page::read(string filename){
   string line;
   ifstream myfile(filename);
@@ -18,9 +24,11 @@ void Page::read(string filename){
       if(line[0] == '#' && !flag){
 	flag = 1;
       }
+      //store each line before # line into navigation field
       else if(!flag){
 	navigation.push_back(line);
       }
+      //store each line after # line into text field
       else{
 	text.push_back(line);
       }
@@ -31,13 +39,17 @@ void Page::read(string filename){
     myfile.close();
   }
   else{
-    //error("Cannot open file");
      throw Failure("Cannot open file");
   }
 }
 
+/*
+  The "checkNavigation" method assign 1 to the navigationCatogry
+  if it is a valid "WIN", 2 for "LOSE" and 3 for choice. If it is
+  3, it also store each line of choice and store it into choicePage
+  field. It also throws an exception if the choice line is invalid.
+ */
 void Page::checkNavigation(){
-  //cout << "endter Navigation\n";
   if(navigation.size()==1 && navigation[0].compare("WIN")==0){
     navigationCatogry = 1;
     return;
@@ -47,19 +59,16 @@ void Page::checkNavigation(){
     return;
   }
   else{
-    //cout << "enter choice 3\n";
     for(size_t i = 0; i < navigation.size(); i++){
       size_t found = navigation[i].find(':');
       if(found != string::npos){
 	size_t idx;
+	//read the number
 	long number = stol(navigation[i], &idx, 10);
 	if(idx < found || number <= 0){
 	  throw Failure("page number must be a positive integer");
 	}
-	//add
 	choicePage.push_back(number);
-	//test
-	//cout << "choicePage: " << number << endl;
       }
       else{
 	throw Failure("each line must have a colon");
@@ -70,7 +79,12 @@ void Page::checkNavigation(){
   }
 }
 
+/*
+  The "printPage" method print a page with choices for what to do
+  or a page with win and lose information.
+ */
 void Page::printPage(){
+  //print text
   for(size_t i =0; i < text.size(); i++){
     cout << text[i] << endl;
   }
@@ -78,10 +92,10 @@ void Page::printPage(){
   if(navigationCatogry == 3){
     cout << "What would you like to do?" << endl;
     cout << endl;
+    //print choice with specified format
     for(size_t i =0; i<navigation.size();i++){
       size_t found = navigation[i].find(':');
       cout << " ";
-      //cout << navigation[i].substr(0,found);
       cout << i+1;
       cout << ". ";
       cout << navigation[i].substr(found+1) << endl;
@@ -95,5 +109,6 @@ void Page::printPage(){
   }
 }
 
+//destructor
 Page::~Page(){
 }

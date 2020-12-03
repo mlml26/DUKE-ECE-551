@@ -13,8 +13,6 @@ int main(int argc, char ** argv){
   book mybook;
   try{
     mybook.readPages(argv[1]);
-    //test
-    //cout << mybook.pages.size() << endl;
     mybook.checkStory();
     mybook.beginStory();
     return EXIT_SUCCESS;
